@@ -13,6 +13,28 @@ Provider-independent Markdown skills for text without AI clichés in two product
 
 Within a line, the language versions share scope, policy, workflow and safeguards. Grammar and examples are localized. Choose the language of the target text, which may differ from the language of your conversation with the assistant. Do not load a UI-copy skill and a prose skill for the same task; each has its scope.
 
+## Installation and Quick Start
+
+Install the skills directly into your coding assistant (Claude Code, Cursor, Codex, Antigravity, OpenCode, Cline and others) via the open agent skills ecosystem ([skills.sh](https://skills.sh)):
+
+```bash
+# Install all 4 skills to the current project
+npx skills add siberius/ui-cliche
+
+# Or install globally across all your projects
+npx skills add siberius/ui-cliche -g
+
+# Install only a specific skill (e.g. Czech UI copy or English prose)
+npx skills add siberius/ui-cliche --skill ui-copy-cs
+npx skills add siberius/ui-cliche --skill prose-en
+```
+
+To test a skill on-the-fly without permanently installing it:
+
+```bash
+npx skills use siberius/ui-cliche@ui-copy-cs
+```
+
 ## For all AI assistants
 
 These skills are provider-independent text instructions. Use them with any AI assistant that accepts text context: attach the Markdown, paste its contents, or ask a coding agent with file access to read it. No API key, dependency, script, account or proprietary tool is required by the skill.
