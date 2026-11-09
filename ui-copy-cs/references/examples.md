@@ -15,6 +15,9 @@ Příklady vyjadřují styl tohoto skillu. Nevypovídají o autorství původní
 | Chyba bez známé příčiny | Jejda! Něco se pokazilo. | Soubor se nepodařilo nahrát | Jen pokud skutečně selhalo nahrání; příčina se nevymýšlí |
 | Destruktivní dialog | Opravdu pokračovat? | Smazat projekt? | Konkrétní následek |
 | Prázdný seznam | Objevte svět možností svých projektů | Zatím nemáte žádné projekty | Pouze po úspěšném načtení prázdného seznamu |
+| Nadpis funkce | Není jen prohlížeč souborů — vaše kreativní pracovní plocha | Soubory | Marketingový kontrast i výplň pryč; nadpis pojmenovává obsah |
+| Tlačítko | Snadno a bez námahy synchronizujte data | Synchronizovat | Nafouknutá výplň nahrazena samotnou akcí |
+| Popis funkce | Slouží jako centrální rozhraní pro správu konceptů | Spravuje koncepty na jednom místě | Přímé sloveso místo nafouknuté konstrukce |
 
 ## Texty, které ponechat
 

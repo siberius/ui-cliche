@@ -25,6 +25,8 @@ English: Portability across AI assistants is not evidence of testing every model
 | V09 | Viditelné tlačítko a jeho přístupný název / Visible button and accessible name | Zachovat shodné pojmenování / Keep names aligned |
 | V10 | Autor výslovně zadá přesný název / Author explicitly supplies an exact title | Název svévolně neměnit / Do not silently alter the title |
 | V11 | Požadavek jen na revizi / Review-only request | Nesmí měnit soubory / Must not edit files |
+| V12 | Marketingový kontrast v nadpisu / Marketing contrast in a heading | Nahradit přímým pojmenováním / Replace with a direct name |
+| V13 | Nafouknutá slovní zásoba v tlačítku / Inflated vocabulary in a button | Nahradit prostou akcí jen při ztrátě informace / Replace with a plain action only when information is lost |
 | V12 | Existující věcná trojice formátů / Existing factual list of three formats | Zachovat všechny formáty / Keep all formats |
 | V13 | Prázdný seznam po selhání načítání / Empty list after a loading failure | Netvrdit, že žádné položky neexistují / Do not claim there are no items |
 

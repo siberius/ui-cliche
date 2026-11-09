@@ -6,7 +6,7 @@ description: Piš a kontroluj české texty rozhraní při programování webů 
 
 # Texty rozhraní bez AI klišé
 
-Verze 1.0.0 · 2026-10-30 · česká varianta
+Verze 1.1.0 · 2026-11-09 · česká varianta
 
 Copyright © 2026 Luděk Sušický
 
@@ -37,6 +37,10 @@ Neměň programové identifikátory, klíče překladů, API, příkazy, URL, n�
 - Nadpis pojmenuje obsah nebo úkol. Tlačítko popisuje konkrétní akci, zpravidla infinitivem: „Uložit změny“, „Přidat soubor“, „Smazat projekt“.
 - Jedna akce má v celém toku stejný název. „Uložit koncept“ a „Publikovat“ rozlišuj podle skutečného chování.
 - Nepřidávej generické slogany, úvodní uvítání, opakující se podnadpisy ani výplň typu „vše na jednom místě“, „snadno a rychle“ či „posuňte svou práci na další úroveň“.
+- Uplatni test přenositelnosti: když by se řetězec beze změny hodil do jakékoliv jiné aplikace, je to výplň. Nahraď jej konkrétním účelem této funkce, nebo jej vynech.
+- Nepiš marketingové kontrasty typu „není jen správce souborů, ale pracovní prostor“. Pojmenuj funkci přímo. Věcné srovnání dvou skutečných voleb tím není dotčeno.
+- Nafouknuté slovní zásobě dej přednost prosté, jen když stojí místo konkrétní informace: „seamlessly“/„bezproblémově“, „snadno a bez námahy“, „výkonný“, „intuitivní“, „moderní“, „špičkový“. Nezasahuj do citovaných názvů produktů a zavedených termínů.
+- Dávej přednost prostému „je“ a přímým slovesům. „Slouží jako centrální rozhraní pro správu konceptů“ je „Spravuje koncepty na jednom místě“.
 - Text má přinést potřebnou informaci. Pokud nic nepřidává, vynech jej. Nevytvářej povinné trojice výhod ani umělé kontrasty. Věcný seznam tří položek je v pořádku.
 - Chyba řekne, co se nepodařilo a jak pokračovat, pokud je další krok znám. Příčinu uváděj jen tehdy, když ji aplikace zná. Nevymýšlej síťovou chybu, oprávnění ani technické limity.
 - Úspěch potvrzuj pouze po skutečně potvrzeném úspěchu. Textem nemaskuj chybějící obsluhu chyby; případný nesoulad chování nahlas.
@@ -53,12 +57,12 @@ Neměň programové identifikátory, klíče překladů, API, příkazy, URL, n�
 4. Projdi také tooltipy, `aria-label`, placeholdery, validace a všechny dosažitelné stavy změněné funkce. Zkontroluj soulad viditelného a přístupného názvu.
 5. Ověř diff. Neměň technické řetězce ani nesouvisející texty. Po zásahu do kódu použij dostupnou přiměřenou syntaktickou kontrolu nebo test dotčené funkce.
 
-Při samotné revizi vypiš konkrétní nálezy a návrhy. Při zadání úpravy je proveď a stručně uveď výsledek a skutečně provedené ověření. Pokud text už funguje, ponech jej.
+Zadání má dva typy. Při revizi vypiš nálezy bez změny souborů: každý nález jednou řádkou se vzorem, citovaným řetězcem a návrhem opravy. Text nepřepisuj, neskóruj ani neodhaduj, zda ho napsala AI. Při úpravě změň dotčené řetězce a pak uveď stručný seznam „Co se změnilo“: každá změna se důvodem a skutečně provedeným ověřením. Funkční text nech být.
 
 ## Závěrečná kontrola
 
 - Nadpisy a krátké ovládací texty nemají dekorativní koncovou interpunkci; otázky a významové znaky zůstaly.
-- Není zde spojovací pomlčka, náhradní spojovník, prázdný slogan ani zbytečný podnadpis.
+- Není zde spojovací pomlčka, náhradní spojovník, prázdný slogan, marketingový kontrast, nafouknutá výplň ani zbytečný podnadpis.
 - Akce, stavy a následky odpovídají chování aplikace; význam a míra jistoty se nezměnily.
 - Terminologie, oslovení a přístupné názvy jsou konzistentní.
 - Interpolace a technické hodnoty zůstaly beze změny.

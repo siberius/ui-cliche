@@ -6,7 +6,7 @@ description: Write and review English interface copy while building websites and
 
 # UI copy without AI clichés
 
-Version 1.0.0 · 2026-10-30 · English variant
+Version 1.1.0 · 2026-11-09 · English variant
 
 Copyright © 2026 Luděk Sušický
 
@@ -37,6 +37,10 @@ Do not change program identifiers, translation keys, APIs, commands, URLs, filen
 - A heading names the content or task. A button names the specific action with a direct verb: “Save changes”, “Add file”, “Delete project”.
 - Give the same action the same name throughout a flow. Distinguish “Save draft” from “Publish” according to actual behaviour.
 - Do not add generic slogans, introductory welcomes, redundant subheadings or filler such as “all in one place”, “quick and easy” or “take your work to the next level”.
+- Apply the portability test: if a string could appear unchanged in any other application, it is filler. Replace it with the concrete purpose of this feature, or remove it.
+- Do not write marketing contrasts such as “not just a file browser, but a workspace”. Name the feature directly. A factual comparison of two real options is not affected.
+- Replace inflated vocabulary with plain wording only when it stands in place of concrete information: utilize → use, leverage → use, “seamlessly”, “effortlessly”, “powerful”, “intuitive”, “cutting-edge”, “streamlined”. Do not alter quoted product names or established terms.
+- Prefer “is” and direct verbs over inflated constructions. “Serves as a centralized hub for draft management” becomes “Manages drafts in one place”.
 - Copy must supply needed information. Omit it when it adds nothing. Do not manufacture benefit triads or rhetorical contrasts. A factual list of three items is fine.
 - An error explains what failed and how to continue when a next step is known. State a cause only when the application knows it. Do not invent network failures, permissions or technical limits.
 - Confirm success only after actual success has been confirmed. Do not hide missing error handling with copy; report any mismatch in behaviour.
@@ -53,12 +57,12 @@ Do not change program identifiers, translation keys, APIs, commands, URLs, filen
 4. Also review tooltips, `aria-label`, placeholders, validation and all reachable states of the changed feature. Check agreement between visible and accessible names.
 5. Review the diff. Do not change technical strings or unrelated copy. After editing code, use an available, proportionate syntax check or test of the affected feature.
 
-For a review-only request, report specific findings and suggested wording. For an editing request, make the changes and briefly report the result and verification actually performed. Leave working copy alone.
+A request has one of two job types. For a review, report findings without changing files: one finding per row with the pattern, the quoted string and a suggested fix. Do not rewrite the text, score it or guess whether AI wrote it. For an edit, change the affected strings, then report a short “What changed” list: each change with its reason, plus the verification actually performed. Leave working copy alone.
 
 ## Final check
 
 - Headings and short control text have no decorative ending punctuation; questions and meaningful characters remain.
-- There are no clause-connecting dashes, substitute hyphens, empty slogans or redundant subheadings.
+- There are no clause-connecting dashes, substitute hyphens, empty slogans, marketing contrasts, inflated filler vocabulary or redundant subheadings.
 - Actions, states and consequences match application behaviour; meaning and certainty have not changed.
 - Terminology, tone and accessible names are consistent.
 - Interpolation and technical values remain intact.

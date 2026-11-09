@@ -15,6 +15,9 @@ These examples express this skill's style. They do not identify the authorship o
 | Error with unknown cause | Oops! Something went wrong. | Could not upload the file | Only if the upload actually failed; do not invent a cause |
 | Destructive dialog | Are you sure you want to continue? | Delete project? | Specific consequence |
 | Empty list | Discover a world of possibilities for your projects | No projects yet | Only after successfully loading an empty list |
+| Feature heading | Not just a file browser — your creative workspace | Files | Marketing contrast and filler removed; the heading names the content |
+| Button | Effortlessly sync your data | Sync now | Inflated filler replaced by the action itself |
+| Feature description | Serves as a centralized hub for draft management | Manages drafts in one place | A direct verb beats the inflated construction |
 
 ## Copy to keep
 

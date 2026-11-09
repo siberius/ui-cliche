@@ -1,15 +1,17 @@
-# UI klišé — texty rozhraní bez AI stop
+# UI klišé — texty a próza bez AI stop
 
 [English](README.md)
 
-Dva obsahově odpovídající Markdown skilly pro psaní textů rozhraní při tvorbě webů a aplikací. Řeší nadpisy, tlačítka, formuláře, dialogy, stavy, chyby a přístupné popisky, včetně řetězců uvnitř kódu.
+Markdown skilly nezávislé na poskytovateli, ve dvou produktových řadách. **Texty rozhraní** (`ui-copy-cs`, `ui-copy-en`) řeší nadpisy, tlačítka, formuláře, dialogy, stavy, chyby a přístupné popisky, včetně řetězců uvnitř kódu. **Próza** (`prose-cs`, `prose-en`) upravuje články, eseje, příspěvky a texty dokumentace do srozumitelné lidské prózy se zachováním autorova hlasu, nebo jen detekuje klišé vzory bez přepisu.
 
-| Jazyk rozhraní | Skill | Příklady |
-|---|---|---|
-| Čeština | [ui-copy-cs/SKILL.md](ui-copy-cs/SKILL.md) | [České příklady](ui-copy-cs/references/examples.md) |
-| Angličtina | [ui-copy-en/SKILL.md](ui-copy-en/SKILL.md) | [Anglické příklady](ui-copy-en/references/examples.md) |
+| Řada | Jazyk | Skill | Příklady |
+|---|---|---|---|
+| Texty rozhraní | Čeština | [ui-copy-cs/SKILL.md](ui-copy-cs/SKILL.md) | [České příklady](ui-copy-cs/references/examples.md) |
+| Texty rozhraní | Angličtina | [ui-copy-en/SKILL.md](ui-copy-en/SKILL.md) | [Anglické příklady](ui-copy-en/references/examples.md) |
+| Próza | Čeština | [prose-cs/SKILL.md](prose-cs/SKILL.md) | [České příklady](prose-cs/references/examples.md) |
+| Próza | Angličtina | [prose-en/SKILL.md](prose-en/SKILL.md) | [Anglické příklady](prose-en/references/examples.md) |
 
-Varianty mají stejný rozsah, pravidla interpunkce, postup a ochranu významu. Gramatika a příklady odpovídají jazyku. Vybírej podle jazyka rozhraní, který se může lišit od jazyka rozhovoru s asistentem.
+V rámci řady mají jazykové varianty stejný rozsah, pravidla, postup a ochranu významu. Gramatika a příklady odpovídají jazyku. Vybírej podle jazyka cílového textu, který se může lišit od jazyka rozhovoru s asistentem. Nenačítej skill pro rozhraní a skill pro prózu k témuž úkolu; každý má svůj rozsah.
 
 ## Pro všechny AI asistenty
 
@@ -29,16 +31,29 @@ Pro kontrolu bez úprav:
 
 > Zkontroluj texty rozhraní podle tohoto skillu. Vypiš konkrétní problémy a navrhni opravy. Soubory neměň.
 
+Pro prózu přilož český `prose-cs/SKILL.md` a zadej:
+
+> Uprav tímto skillem tento koncept článku. Zachovej můj hlas a skutková tvrzení. Vrať upravený text a stručný seznam „Co se změnilo“.
+
 ## Co řeší
+
+Texty rozhraní:
 
 - Nadpisy, tlačítka a krátké popisky bez koncových teček
 - Odstranění dekorativních spojovacích pomlček a generických sloganů
 - Konkrétní názvy akcí a jednotnou terminologii
+- Marketingové kontrasty a nafouknutou slovní zásobu nahrazené konkrétním pojmenováním
 - Pravdivé chyby a oznámení úspěchu se zachováním následků
 - Běžnou interpunkci ve vysvětlení a skutečných otázkách
 - Ochranu identifikátorů, URL, názvů souborů, proměnných a pluralizace
 
-Skill stanovuje redakční styl. Neurčuje autorství a neoptimalizuje skóre detektorů AI. Není editorem článků, nevyžaduje nepravidelné délky vět a nezakazuje věcné seznamy tří položek. Výslovné zadání uživatele a závazná pravidla projektu mají přednost.
+Próza:
+
+- Pojmenované klišé vzory (binární kontrasty, protahovací úvody, odhalení dvojtečkou, nafouknutá významnost, vykroutená atribuce a další) rozpoznávané a škrtané
+- Zachovaný autorův hlas, výhrady a skutková tvrzení; nic se nevymýšlí
+- Minimální účinný zásah se zprávou „Co se změnilo“; detekce bez přepisu
+
+Skilly stanovují redakční styl. Neurčují autorství a neoptimalizují skóre detektorů AI. Výslovné zadání uživatele a závazná pravidla projektu mají přednost.
 
 ## Dokumentace
 
@@ -47,7 +62,7 @@ Skill stanovuje redakční styl. Neurčuje autorství a neoptimalizuje skóre de
 - [Zdroje a rozhodnutí](docs/SOURCES.md)
 - [Historie verzí](CHANGELOG.md)
 
-Verze 1.0.0 · 2026-10-30
+Verze 1.1.0 (texty rozhraní) a 1.0.0 (próza) · 2026-11-09
 
 ## Autor
 
@@ -58,9 +73,11 @@ Verze 1.0.0 · 2026-10-30
 - LinkedIn: [Luděk Sušický](https://www.linkedin.com/in/ludek-susicky/)
 - GitHub: [@siberius](https://github.com/siberius) — další vzdělávací projekty a otevřené aplikace
 
-## Nahrazení původního skillu
+## Rodokmen
 
-Česká varianta nahrazuje obecný skill Psaní bez AI otisků. Je zdrojem české přílohy na webu Vibemaker; původní webové adresy zůstávají zachované. Webová příloha obsahuje příklady přímo v jednom Markdown souboru. Starý skill pro články se samostatně neudržuje.
+Česká varianta `ui-copy-cs` nahrazuje obecný skill Psaní bez AI otisků jako zdroj české přílohy na webu Vibemaker; původní webové adresy zůstávají zachované. Webová příloha obsahuje příklady přímo v jednom Markdown souboru.
+
+Edice pro prózu (`prose-cs`, `prose-en`) navazují na článkovou práci původního skillu s výslovným rozsahem. Jejich metodika je adaptována z [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop) (MIT); texty tohoto repozitáře jsou samostatné. Viz [zdroje](docs/SOURCES.md).
 
 ## License / Licence
 

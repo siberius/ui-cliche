@@ -8,6 +8,7 @@ Vlastní formulace pravidel a příkladů vznikly pro tento projekt. Externí zd
 
 - [UX Writing Skill](https://github.com/content-designer/ux-writing-skill/blob/main/SKILL.md): členění podle prvků rozhraní, konkrétní slovesa a jednotná terminologie.
 - [Humanizer](https://github.com/blader/humanizer/blob/main/SKILL.md): podněty ke kontrole klišé, pomlček a zachování významu. Nepřebíráme tvrzení o spolehlivé detekci autorství.
+- [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop) (MIT): metodika edic pro prózu (`prose-cs`, `prose-en`) a nové vzory v 1.1.0 edicích pro rozhraní: dva typy zadání, pojmenované vzory klišé, test přenositelnosti a zachování hlasu autora. Texty tohoto balíčku jsou samostatné; přímý převzetí cizího textu neproběhlo.
 - [Microsoft Fluent: Content design](https://fluent2.microsoft.design/content-design): stručnost, interpunkce podle kontextu, přístupné texty.
 - [Microsoft Style Guide: Periods](https://learn.microsoft.com/style-guide/punctuation/periods): nadpisy a krátké UI prvky bez koncové tečky.
 - [Microsoft Style Guide: Colons](https://learn.microsoft.com/en-us/style-guide/punctuation/colons): bez koncových dvojteček u nadpisů a ovládacích popisků.
@@ -22,7 +23,7 @@ Zdroje konzultovány 2026-10-30. Odkazy na hlavní větve se mohou průběžně 
 
 The rules and examples were written for this project. External sources informed the design; this package does not include copied skills or code from those sources. The sources retain their own licenses. Preserve applicable terms and notices if their text or code is incorporated in future.
 
-The linked UX Writing Skill informed element-specific guidance, concrete verbs and terminology. Humanizer informed checks for clichés, dashes and preservation of meaning, without adopting claims of reliable authorship detection. Microsoft Fluent and the Microsoft style-guide pages informed contextual punctuation and accessible copy.
+The linked UX Writing Skill informed element-specific guidance, concrete verbs and terminology. Humanizer informed checks for clichés, dashes and preservation of meaning, without adopting claims of reliable authorship detection. Microsoft Fluent and the Microsoft style-guide pages informed contextual punctuation and accessible copy. petergyang/no-ai-slop (MIT) informed the prose editions (`prose-cs`, `prose-en`) and the 1.1.0 patterns in the UI-copy editions: the two job types, the named cliché patterns, the portability test and voice preservation. This package's texts are independent; no upstream text was incorporated verbatim.
 
 The ban on decorative clause-connecting dashes is this project's chosen style. It does not imply that every linked guide prohibits dashes. English language conventions from the sources are not mechanically imposed on Czech.
 
