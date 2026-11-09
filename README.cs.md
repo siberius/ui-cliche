@@ -49,7 +49,14 @@ Skill stanovuje redakční styl. Neurčuje autorství a neoptimalizuje skóre de
 
 Verze 1.0.0 · 2026-10-30
 
-Copyright © 2026 Luděk Sušický · [@siberius na GitHubu](https://github.com/siberius)
+## Autor
+
+**Luděk Sušický** — biolog, středoškolský a vysokoškolský učitel informatických předmětů
+
+- E-mail: [ludek.susicky@gmail.com](mailto:ludek.susicky@gmail.com)
+- X: [@ludeksusicky](https://x.com/ludeksusicky)
+- LinkedIn: [Luděk Sušický](https://www.linkedin.com/in/ludek-susicky/)
+- GitHub: [@siberius](https://github.com/siberius) — další vzdělávací projekty a otevřené aplikace
 
 ## Nahrazení původního skillu
 

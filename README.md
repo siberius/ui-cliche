@@ -49,7 +49,14 @@ The skill defines an editorial style. It does not identify AI authorship or opti
 
 Version 1.0.0 · 2026-10-30
 
-Copyright © 2026 Luděk Sušický · [@siberius on GitHub](https://github.com/siberius)
+## Author
+
+**Luděk Sušický** — biologist, secondary-school and university teacher of computing subjects
+
+- E-mail: [ludek.susicky@gmail.com](mailto:ludek.susicky@gmail.com)
+- X: [@ludeksusicky](https://x.com/ludeksusicky)
+- LinkedIn: [Luděk Sušický](https://www.linkedin.com/in/ludek-susicky/)
+- GitHub: [@siberius](https://github.com/siberius) — more educational projects and open-source applications
 
 ## Replacement of the original skill
 
