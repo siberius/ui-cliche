@@ -6,7 +6,7 @@ Copyright © 2026 Luděk Sušický
 
 ### Výběr varianty
 
-Použij `ui-copy-cs` pro české UI a `ui-copy-en` pro anglické UI. Jazyk pokynů i příkladů odpovídá cílovému UI. U dvojjazyčné aplikace aplikuj varianty na příslušné řetězce; nenech jednu variantu přepsat druhý jazyk. Nezapínej obě pro každý běžný úkol.
+Použij `cliche` pro obecné texty pro lidi (články, dokumentaci, e-maily, marketing, webové texty) v angličtině i češtině; české vrstvy si skill dotahuje z `cliche/references/` sám podle jazyka a úkolu. Pro řetězce rozhraní přímo v kódu při programování použij `ui-copy-cs` pro české UI a `ui-copy-en` pro anglické UI. Jazyk pokynů i příkladů odpovídá cílovému UI. U dvojjazyčné aplikace aplikuj varianty na příslušné řetězce; nenech jednu variantu přepsat druhý jazyk. Nenačítej víc skillů k jednomu úkolu, než úkol potřebuje.
 
 ### Připojení k práci
 
@@ -28,7 +28,7 @@ Změnu společného pravidla proveď v obou `SKILL.md` a v odpovídajících př
 
 ### Choose a variant
 
-Use `ui-copy-cs` for Czech UI and `ui-copy-en` for English UI. Instructions and examples match the target UI language. In a bilingual application, apply each variant to its corresponding strings; do not let one overwrite the other language. Do not load both for every ordinary task.
+Use `cliche` for general human-facing text (articles, documentation, e-mail, marketing, web copy) in English or Czech; the skill pulls its Czech layers from `cliche/references/` on demand according to language and task. For interface strings inside code while programming, use `ui-copy-cs` for Czech UI and `ui-copy-en` for English UI. Instructions and examples match the target language. In a bilingual application, apply each variant to its corresponding strings; do not let one overwrite the other language. Do not load more skills for one task than the task needs.
 
 ### Supply the skill
 

@@ -1,17 +1,16 @@
-# UI Klišé (Copy and Prose without AI Clichés)
+# UI Klišé (Text without AI Clichés)
 
 [Česky](README.cs.md)
 
-Provider-independent Markdown skills for text without AI clichés in two product lines. **UI copy** (`ui-copy-cs`, `ui-copy-en`) covers headings, buttons, forms, dialogs, statuses, errors and accessible labels, including strings inside code. **Prose** (`prose-cs`, `prose-en`) edits articles, essays, posts and documentation prose into clear, human writing while preserving the author's voice, or detects the cliché patterns without rewriting.
+Provider-independent Markdown skills for text without AI clichés. The flagship **cliche** skill edits or audits any human-facing text (articles, documentation, e-mail, marketing, web copy) with a lean English core and a Czech localization layer loaded only when needed. The specialized **ui-copy** skills (`ui-copy-cs`, `ui-copy-en`) cover interface strings inside code while programming, with protected technical tokens and accessibility rules.
 
-| Line | Language | Skill | Examples |
-|---|---|---|---|
-| UI copy | Czech | [ui-copy-cs/SKILL.md](ui-copy-cs/SKILL.md) | [Czech examples](ui-copy-cs/references/examples.md) |
-| UI copy | English | [ui-copy-en/SKILL.md](ui-copy-en/SKILL.md) | [English examples](ui-copy-en/references/examples.md) |
-| Prose | Czech | [prose-cs/SKILL.md](prose-cs/SKILL.md) | [Czech examples](prose-cs/references/examples.md) |
-| Prose | English | [prose-en/SKILL.md](prose-en/SKILL.md) | [English examples](prose-en/references/examples.md) |
+| Skill | Scope | Detail loaded on demand |
+|---|---|---|
+| [cliche/SKILL.md](cliche/SKILL.md) | Any human-facing text, edit or detect | [Universal patterns](cliche/references/patterns.md) · [Czech lexicon](cliche/references/czech-lexicon.md) · [Czech syntax](cliche/references/czech-syntax.md) · [Czech typography](cliche/references/czech-typography.md) · [Czech examples](cliche/references/examples-cz.md) |
+| [ui-copy-cs/SKILL.md](ui-copy-cs/SKILL.md) | Czech interface strings in code | [Czech examples](ui-copy-cs/references/examples.md) |
+| [ui-copy-en/SKILL.md](ui-copy-en/SKILL.md) | English interface strings in code | [English examples](ui-copy-en/references/examples.md) |
 
-Within a line, the language versions share scope, policy, workflow and safeguards. Grammar and examples are localized. Choose the language of the target text, which may differ from the language of your conversation with the assistant. Do not load a UI-copy skill and a prose skill for the same task; each has its scope.
+The cliche skill uses progressive disclosure: its SKILL.md holds only the identity, the two jobs, the core principles and the quality gate. Pattern catalogs, the Czech lexicon, Czech syntax and typography live in `references/` and are read only for the language and task at hand; an English edit never loads the Czech layer.
 
 ## For all AI assistants
 
@@ -31,27 +30,28 @@ For a review without edits:
 
 > Review the interface copy using this skill. Identify specific issues and suggest replacements. Do not change files.
 
-For prose, attach the English prose `SKILL.md` and ask:
+For prose and general text, attach the cliche `SKILL.md` and ask:
 
 > Edit this article draft with this skill. Preserve my voice and factual claims. Return the edited draft and a short What changed list.
 
+For a Czech text, the skill itself reads its Czech references (lexicon, syntax, typography) when needed.
+
 ## What it changes
 
-UI copy:
+cliche (any human-facing text):
+
+- Named cliché patterns (throat-clearing, binary contrasts, colon reveals, rule of threes, weasel attribution and more) detected and cut
+- The author's voice, qualifiers and factual claims preserved; missing data becomes a visible placeholder, never an invention
+- For Czech: calques and marketing filler replaced, theme-to-rheme word order, "svůj" and active voice, ČSN 01 6910 typography
+- Five-dimension quality gate (any dimension under 7/10 goes back) and a minimum-length discipline for new Czech text
+
+ui-copy (interface strings in code):
 
 - No terminal periods in headings, buttons and short labels
 - No decorative clause-connecting dashes or generic AI slogans
-- Concrete action labels and consistent terminology
+- Concrete action labels, consistent terminology, preserved consequences
 - Marketing contrasts and inflated filler vocabulary replaced by concrete wording
-- Accurate error and success messages, with preserved consequences
-- Normal punctuation in explanations and genuine questions
 - Protected code identifiers, URLs, filenames, placeholders and pluralization
-
-Prose:
-
-- Named cliché patterns (binary contrasts, throat-clearing, colon reveals, importance puffery, weasel attribution and more) detected and cut
-- The author's voice, qualifiers and factual claims preserved; nothing invented
-- Minimum effective edit with a What changed report; detection without rewriting
 
 The skills define an editorial style. They do not identify AI authorship or optimize for detector scores. Explicit user requirements and binding project rules take precedence.
 
@@ -62,7 +62,7 @@ The skills define an editorial style. They do not identify AI authorship or opti
 - [Sources and design decisions](docs/SOURCES.md)
 - [Version history](CHANGELOG.md)
 
-Version 1.1.0 (ui-copy) and 1.0.0 (prose) · 2026-11-09
+Version 2.0.0 (cliche) and 1.1.0 (ui-copy) · 2026-11-10
 
 ## Author
 
@@ -75,9 +75,9 @@ Version 1.1.0 (ui-copy) and 1.0.0 (prose) · 2026-11-09
 
 ## Lineage
 
-The Czech `ui-copy-cs` variant replaces the general Psaní bez AI otisků skill as the source for the Czech attachment on Vibemaker; existing website addresses are retained. The web attachment includes the examples in one Markdown file.
+The cliche skill continues the article-oriented work of the original Psaní bez AI otisků skill and supersedes the short-lived prose-cs/prose-en editions. Its methodology is informed by petergyang/no-ai-slop, Azayzel/stop-slop and the Czech AI-slop analysis stored in [docs/analyza-ceskeho-ai-slopu.md](docs/analyza-ceskeho-ai-slopu.md); see [sources](docs/SOURCES.md).
 
-The prose editions (`prose-cs`, `prose-en`) continue the article-oriented work of the original skill with an explicit scope. Their methodology is adapted from [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop) (MIT); this repository's texts are independent. See [sources](docs/SOURCES.md).
+The ui-copy skills replace the general Psaní bez AI otisků skill as the source for the Czech attachment on Vibemaker; existing website addresses are retained.
 
 ## License / Licence
 
