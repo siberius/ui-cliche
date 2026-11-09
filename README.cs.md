@@ -1,4 +1,4 @@
-# Texty rozhraní bez AI klišé
+# UI klišé — texty rozhraní bez AI stop
 
 [English](README.md)
 

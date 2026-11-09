@@ -1,8 +1,8 @@
-# UI copy skills
+# UI Klišé (UI Copy without AI Clichés)
 
 [Česky](README.cs.md)
 
-Two equivalent Markdown skills for writing interface copy while building websites and applications. They cover headings, buttons, forms, dialogs, statuses, errors and accessible labels, including strings inside code.
+Two equivalent Markdown skills for writing interface copy without AI clichés while building websites and applications. They cover headings, buttons, forms, dialogs, statuses, errors and accessible labels, including strings inside code.
 
 | UI language | Skill | Examples |
 |---|---|---|
