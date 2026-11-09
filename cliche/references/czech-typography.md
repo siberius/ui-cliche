@@ -14,6 +14,10 @@ pro český text, ne pro bloky kódu a ne pro citace cizího originálu.
 
 ## Pomlčky a spojovník
 
+Vsuvka s ` – ` je podle ČSN legitimní česká sazba. V autorském textu ji
+zachovej (maximálně 1–2× na text); škrtni ji tehdy, když je tikem: nahrazuje
+čárky, objevuje se v kupách nebo nese umělé drama.
+
 | Znak | Kdy | Příklad |
 |---|---|---|
 | `–` (půlčtverčíková) s mezerami | vsuvka ve větě, jen 1–2× na text | „Vše funguje – až na export." |

@@ -55,6 +55,13 @@ ui-copy (interface strings in code):
 
 The skills define an editorial style. They do not identify AI authorship or optimize for detector scores. Explicit user requirements and binding project rules take precedence.
 
+## What it is not
+
+- Not an AI detector: the skills name patterns a reader can check; they do not score text or guess who wrote it. Independent tests show detectors fail on Czech anyway.
+- Not a proof of human authorship: an edited text passes the style rules, nothing more.
+- Not a general article or code editor: cliche does not rewrite opinions into house style, and ui-copy never touches technical strings, identifiers or interpolated values.
+- No runtime: the skills are plain Markdown. No network calls, no accounts, no data collection, nothing installed by the skill itself.
+
 ## Documentation
 
 - [Usage and maintenance](docs/USAGE.md)
@@ -62,16 +69,16 @@ The skills define an editorial style. They do not identify AI authorship or opti
 - [Sources and design decisions](docs/SOURCES.md)
 - [Version history](CHANGELOG.md)
 
-Version 2.0.0 (cliche) and 1.1.0 (ui-copy) · 2026-11-10
+Version: cliche 1.0.0 · ui-copy 1.1.0 · 2026-11-10
 
 ## Author
 
-**Luděk Sušický** — biologist, secondary-school and university teacher of computing subjects
+**Luděk Sušický**: biologist, secondary-school and university teacher of computing subjects
 
 - E-mail: [ludek.susicky@gmail.com](mailto:ludek.susicky@gmail.com)
 - X: [@ludeksusicky](https://x.com/ludeksusicky)
 - LinkedIn: [Luděk Sušický](https://www.linkedin.com/in/ludek-susicky/)
-- GitHub: [@siberius](https://github.com/siberius) — more educational projects and open-source applications
+- GitHub: [@siberius](https://github.com/siberius), more educational projects and open-source applications
 
 ## Lineage
 

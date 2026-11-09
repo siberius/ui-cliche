@@ -4,7 +4,7 @@ Copyright © 2026 Luděk Sušický
 
 ## Stav / Status
 
-Verze / Version: 2.0.0, 2026-11-10
+Verze / Version: cliche 1.0.0 · ui-copy 1.1.0, 2026-11-10
 
 Česky: Přenositelnost na různé AI není dokladem testování na všech modelech. Ověření formátu skillu a redakční kontrola nejsou behaviorálním testem modelu. Záznam skutečně provedených kontrol je uveden níže. Testování konkrétních AI zatím čeká na upřesnění autora.
 

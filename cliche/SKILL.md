@@ -6,7 +6,7 @@ description: Edit or audit human-facing text (articles, documentation, e-mail, m
 
 # Text without AI clichés
 
-Version 2.0.0 · 2026-11-10
+Version 1.0.0 · 2026-11-10
 
 Copyright © 2026 Luděk Sušický
 

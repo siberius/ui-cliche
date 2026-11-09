@@ -1,4 +1,4 @@
-# UI klišé — texty bez AI stop
+# UI klišé: texty bez AI stop
 
 [English](README.md)
 
@@ -55,6 +55,13 @@ ui-copy (řetězce rozhraní v kódu):
 
 Skilly stanovují redakční styl. Neurčují autorství a neoptimalizují skóre detektorů AI. Výslovné zadání uživatele a závazná pravidla projektu mají přednost.
 
+## Co to není
+
+- Není to detektor AI: skilly pojmenovávají vzory, které si čtenář může ověřit; neskórují text a neodhadují, kdo ho napsal. Nezávislé testy navíc ukazují, že detektory v češtině selhávají.
+- Není to důkaz lidského autorství: upravený text splňuje pravidla stylu a nic víc.
+- Není to obecný editor článků ani kódu: cliche nepřepisuje názory do jednotného stylu a ui-copy se nikdy nedotkne technických řetězců, identifikátorů ani interpolovaných hodnot.
+- Žádný běh na pozadí: skilly jsou čistý Markdown. Žádná síťová volání, žádné účty, žádný sběr dat, nic se samo neinstaluje.
+
 ## Dokumentace
 
 - [Použití a údržba](docs/USAGE.md)
@@ -62,16 +69,16 @@ Skilly stanovují redakční styl. Neurčují autorství a neoptimalizují skór
 - [Zdroje a rozhodnutí](docs/SOURCES.md)
 - [Historie verzí](CHANGELOG.md)
 
-Verze 2.0.0 (cliche) a 1.1.0 (ui-copy) · 2026-11-10
+Verze: cliche 1.0.0 · ui-copy 1.1.0 · 2026-11-10
 
 ## Autor
 
-**Luděk Sušický** — biolog, středoškolský a vysokoškolský učitel informatických předmětů
+**Luděk Sušický**: biolog, středoškolský a vysokoškolský učitel informatických předmětů
 
 - E-mail: [ludek.susicky@gmail.com](mailto:ludek.susicky@gmail.com)
 - X: [@ludeksusicky](https://x.com/ludeksusicky)
 - LinkedIn: [Luděk Sušický](https://www.linkedin.com/in/ludek-susicky/)
-- GitHub: [@siberius](https://github.com/siberius) — další vzdělávací projekty a otevřené aplikace
+- GitHub: [@siberius](https://github.com/siberius), další vzdělávací projekty a otevřené aplikace
 
 ## Rodokmen
 
