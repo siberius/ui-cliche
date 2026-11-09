@@ -13,28 +13,6 @@ Markdown skilly nezávislé na poskytovateli, ve dvou produktových řadách. **
 
 V rámci řady mají jazykové varianty stejný rozsah, pravidla, postup a ochranu významu. Gramatika a příklady odpovídají jazyku. Vybírej podle jazyka cílového textu, který se může lišit od jazyka rozhovoru s asistentem. Nenačítej skill pro rozhraní a skill pro prózu k témuž úkolu; každý má svůj rozsah.
 
-## Instalace a rychlé spuštění
-
-Nainstaluj skilly přímo do svého AI asistenta (Claude Code, Cursor, Codex, Antigravity, OpenCode, Cline a dalších) přes CLI standard [skills.sh](https://skills.sh):
-
-```bash
-# Instalace všech 4 skillů do aktuálního projektu
-npx skills add siberius/ui-cliche
-
-# Globální instalace pro všechny projekty
-npx skills add siberius/ui-cliche -g
-
-# Instalace jen konkrétního skillu (např. české UI texty nebo česká próza)
-npx skills add siberius/ui-cliche --skill ui-copy-cs
-npx skills add siberius/ui-cliche --skill prose-cs
-```
-
-Jednorázové vyzkoušení bez trvalé instalace:
-
-```bash
-npx skills use siberius/ui-cliche@ui-copy-cs
-```
-
 ## Pro všechny AI asistenty
 
 Skilly jsou textové instrukce nezávislé na poskytovateli. Použij je s kterýmkoli AI asistentem, který přijímá textový kontext: přilož Markdown, vlož obsah nebo požádej programujícího agenta s přístupem k souborům o načtení. Skill nevyžaduje API klíč, závislosti, skript, účet ani proprietární nástroj.
