@@ -49,7 +49,7 @@ Skill stanovuje redakční styl. Neurčuje autorství a neoptimalizuje skóre de
 
 Verze 1.0.0 · 2026-10-30
 
-Copyright © 2026 Luděk Sušický
+Copyright © 2026 Luděk Sušický · [@siberius na GitHubu](https://github.com/siberius)
 
 ## Nahrazení původního skillu
 

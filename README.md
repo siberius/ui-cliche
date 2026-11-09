@@ -49,7 +49,7 @@ The skill defines an editorial style. It does not identify AI authorship or opti
 
 Version 1.0.0 · 2026-10-30
 
-Copyright © 2026 Luděk Sušický
+Copyright © 2026 Luděk Sušický · [@siberius on GitHub](https://github.com/siberius)
 
 ## Replacement of the original skill
 
