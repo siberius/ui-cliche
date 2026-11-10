@@ -21,7 +21,7 @@ Versioning is per skill; the repository hosts more than one.
 - Source analysis stored as docs/analyza-ceskeho-ai-slopu.md; methodology
   recorded in docs/SOURCES.md
 
-## ui-copy 1.1.0 (2026-11-09)
+## cliche 1.1.0 (2026-11-09)
 
 - Formalized the two job types: review findings as one row per finding (pattern, quoted string, suggested fix) and a "What changed" list after edits
 - Added the portability test for filler detection and a contextual ban on inflated marketing vocabulary
@@ -29,7 +29,7 @@ Versioning is per skill; the repository hosts more than one.
 - Extended both example tables and validation scenarios (V12, V13)
 - Source: patterns adapted from petergyang/no-ai-slop (MIT); see docs/SOURCES.md
 
-## ui-copy 1.0.0 (2026-10-30)
+## cliche 1.0.0 (2026-10-30)
 
 - Added equivalent Czech and English skills for UI copy during programming
 - Defined punctuation by element type, with protected technical strings and interpolation
