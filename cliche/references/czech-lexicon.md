@@ -3,15 +3,15 @@
 Copyright © 2026 Luděk Sušický
 
 České projevy univerzálních vzorů z patterns.md plus překladové kalky z
-angličtiny. Detekční zpráva cituje vzor i řádek; u každého uvedeného
-je náhrada.
+angličtiny. Detekční zpráva cituje vzor i řádek a u každého příkladu
+uvede náhradu.
 
 ## Nálepky důležitosti (místo nich mechanismus nebo číslo)
 
 - **klíčový / hraje klíčovou roli / klíčové aspekty**: model tím nalepí
-  důležitost místo vysvětlení. Nahraď tím, proč na věci záleží: co se stane,
-  kdo to použije, o kolik se to změní. Střídmé „zásadní" nebo „důležitý"
-  jen tehdy, kdy okolní věta nese důvod.
+  důležitost místo vysvětlení. Nahraď je vysvětlením, proč na věci záleží:
+  co se stane, kdo to použije, o kolik se to změní. Střídmé „zásadní" nebo
+  „důležitý" jen tehdy, kdy okolní věta nese důvod.
 - **fascinující / poutavé / ohromující** u obyčejných věcí: škrtni.
 
 ## Překladové kalky z angličtiny (vždy nahradit)

@@ -57,7 +57,7 @@ The skills define an editorial style. They do not identify AI authorship or opti
 
 ## What it is not
 
-- Not an AI detector: the skills name patterns a reader can check; they do not score text or guess who wrote it. Independent tests show detectors fail on Czech anyway.
+- Not an AI detector: the skills name patterns a reader can check; they do not score text or guess who wrote it. AI detectors are unreliable on Czech; see [sources](docs/SOURCES.md).
 - Not a proof of human authorship: an edited text passes the style rules, nothing more.
 - Not a general article or code editor: cliche does not rewrite opinions into house style, and ui-copy never touches technical strings, identifiers or interpolated values.
 - No runtime: the skills are plain Markdown. No network calls, no accounts, no data collection, nothing installed by the skill itself.

@@ -2,8 +2,9 @@
 
 Copyright © 2026 Luděk Sušický
 
-Vizuální detektor nesazeného AI textu. Tabulka chybná/správně sazba; platí
-pro český text, ne pro bloky kódu a ne pro citace cizího originálu.
+Pomocný detektor neupraveného AI textu. Tabulka ukazuje chybnou a správnou
+sazbu; platí pro český text, ne pro bloky kódu a ne pro citace cizího
+originálu.
 
 ## Uvozovky
 

@@ -57,7 +57,7 @@ Skilly stanovují redakční styl. Neurčují autorství a neoptimalizují skór
 
 ## Co to není
 
-- Není to detektor AI: skilly pojmenovávají vzory, které si čtenář může ověřit; neskórují text a neodhadují, kdo ho napsal. Nezávislé testy navíc ukazují, že detektory v češtině selhávají.
+- Není to detektor AI: skilly pojmenovávají vzory, které si čtenář může ověřit; neskórují text a neodhadují, kdo ho napsal. Detektory AI jsou v češtině nespolehlivé; viz [zdroje](docs/SOURCES.md).
 - Není to důkaz lidského autorství: upravený text splňuje pravidla stylu a nic víc.
 - Není to obecný editor článků ani kódu: cliche nepřepisuje názory do jednotného stylu a ui-copy se nikdy nedotkne technických řetězců, identifikátorů ani interpolovaných hodnot.
 - Žádný běh na pozadí: skilly jsou čistý Markdown. Žádná síťová volání, žádné účty, žádný sběr dat, nic se samo neinstaluje.

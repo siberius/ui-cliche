@@ -22,7 +22,7 @@ Articles, essays, blog posts, documentation, e-mail, newsletters, marketing and 
 
 ## Two jobs
 
-**Edit (default).** Make the minimum effective edit; strong sentences stay. When writing new Czech text, keep it short: language models write roughly a third longer than people in Czech. Before returning, rate the draft against the five dimensions and rework any layer under 7/10. Return the full edited text plus a short "What changed" list.
+**Edit (default).** Make the minimum effective edit; strong sentences stay. When writing new Czech text, keep it short: models tend to write Czech texts about a third longer than people do. Before returning, rate the draft against the five dimensions and rework any dimension under 7/10. Return the full edited text plus a short "What changed" list.
 
 **Detect.** When asked whether a text reads as AI, or for an audit without rewriting: name each pattern, quote the line, give the fix in a few words. Do not rewrite the text, score it or guess authorship; detectors guess, named patterns are evidence the reader can check. End with what is missing: unsourced claims and places that need a real number or example. Offer to switch to Edit.
 
@@ -60,7 +60,7 @@ Load only what the task needs, never everything:
 
 ## Five dimensions
 
-Rate the edited draft 1 to 10 per dimension. Any dimension under 7, or a total under 35/50, goes back for rework; fix the failing layer only.
+Rate the edited draft 1 to 10 per dimension. Any dimension under 7, or a total under 35/50, goes back for rework; fix the failing dimension only.
 
 | Dimension | Checks |
 |---|---|

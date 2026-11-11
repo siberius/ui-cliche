@@ -65,7 +65,7 @@ podtrhuje / odráží…".
 - Větu ukonči tečkou, nebo
   uveď praktický důsledek spojkou: „…, takže reporty stahujete jako PDF."
 
-## 6. Rytmus (burstiness)
+## 6. Rytmus (střídání délky vět)
 
 Strojový text má stejnoměrné věty. Prostřídej dlouhá souvětí s krátkými
 údernými větami podle emocionální váhy sdělení; krátká věta za dlouhým

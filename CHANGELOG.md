@@ -4,6 +4,18 @@ Copyright © 2026 Luděk Sušický
 
 Versioning is per skill; the repository hosts more than one.
 
+## Unreleased — AI-slop cleanup (2026-11-11)
+
+- Align the Czech length claim with the benchmark recorded in docs/SOURCES.md
+  ("models tend to write Czech texts about a third longer"), without dropping
+  the number.
+- Fix the dimension/layer inconsistency in the edit workflow and quality gate.
+- Repair the Czech typography introduction and clarify the lexicon wording.
+- Replace "burstiness" with a Czech description in the Czech syntax reference.
+- Replace vague detector claims in both READMEs with a sourced statement.
+- No rule, example or Czech layer was cut; the edits remove vague wording and
+  keep the existing methodology.
+
 ## cliche 1.0.0 (2026-11-10)
 
 - New flagship skill `cliche`: one lean English SKILL.md (identity, two jobs,
