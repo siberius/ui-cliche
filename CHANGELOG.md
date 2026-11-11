@@ -4,8 +4,10 @@ Copyright © 2026 Luděk Sušický
 
 Versioning is per skill; the repository hosts more than one.
 
-## Unreleased — AI-slop cleanup (2026-11-11)
+## Unreleased: documentation and version alignment (2026-11-11)
 
+- Add the `cliche` skill to the `md-skills` bank README so the flagship text skill is discoverable next to `ui-copy-cs` and `ui-copy-en`.
+- Relabel the historical 1.1.0 entry as `prose 1.1.0` and the 2026-10-30 entry as `ui-copy 1.0.0`, so the per-skill version history no longer shows cliche 1.1.0 before cliche 1.0.0.
 - Align the Czech length claim with the benchmark recorded in docs/SOURCES.md
   ("models tend to write Czech texts about a third longer"), without dropping
   the number.
@@ -33,7 +35,7 @@ Versioning is per skill; the repository hosts more than one.
 - Source analysis stored as docs/analyza-ceskeho-ai-slopu.md; methodology
   recorded in docs/SOURCES.md
 
-## cliche 1.1.0 (2026-11-09)
+## prose 1.1.0 (2026-11-09), superseded by cliche 1.0.0
 
 - Formalized the two job types: review findings as one row per finding (pattern, quoted string, suggested fix) and a "What changed" list after edits
 - Added the portability test for filler detection and a contextual ban on inflated marketing vocabulary
@@ -41,7 +43,7 @@ Versioning is per skill; the repository hosts more than one.
 - Extended both example tables and validation scenarios (V12, V13)
 - Source: patterns adapted from petergyang/no-ai-slop (MIT); see docs/SOURCES.md
 
-## cliche 1.0.0 (2026-10-30)
+## ui-copy 1.0.0 (2026-10-30)
 
 - Added equivalent Czech and English skills for UI copy during programming
 - Defined punctuation by element type, with protected technical strings and interpolation
