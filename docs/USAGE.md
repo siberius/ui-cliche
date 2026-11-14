@@ -10,7 +10,17 @@ Použij `cliche` pro obecné texty pro lidi (články, dokumentaci, e-maily, mar
 
 ### Připojení k práci
 
-V chatu přilož `SKILL.md` nebo vlož celý jeho obsah. Agentovi s přístupem k souborům zadej skutečnou cestu a požádej ho o načtení. V prostředí s podporou skillů použij kompletní složku podle pravidel daného prostředí. Univerzální instalační cesta neexistuje; tento repozitář nemění konfiguraci žádného asistenta.
+Pro instalaci do moderních AI agentů (Codex, Claude Code, Cursor, Antigravity atd.) použij oficiální CLI z ekosystému [skills.sh](https://skills.sh):
+
+```bash
+# Všechny skilly v repozitáři
+npx skills add siberius/ui-cliche --full-depth -g -a codex
+
+# Konkrétní vybraný skill
+npx skills add siberius/ui-cliche --skill cliche --full-depth -g -a codex
+```
+
+V chatu přilož `SKILL.md` nebo vlož celý jeho obsah. Agentovi s přístupem k souborům zadej skutečnou cestu a požádej ho o načtení. V prostředí s podporou skillů použij kompletní složku podle pravidel daného prostředí. Tento repozitář nemění konfiguraci žádného asistenta automaticky bez vašeho pokynu.
 
 Samotný `SKILL.md` obsahuje všechna závazná pravidla. `references/examples.md` je doplňkový materiál pro nejasné případy, dostupný vedle skillu nebo jako další příloha. README a tato dokumentace nejsou nutnou součástí kontextu při každém použití.
 
@@ -32,7 +42,17 @@ Use `cliche` for general human-facing text (articles, documentation, e-mail, mar
 
 ### Supply the skill
 
-In chat, attach `SKILL.md` or paste its complete contents. Give a file-capable agent the actual path and ask it to read the file. In an environment with skill support, use the complete folder according to that environment's rules. There is no universal installation path; this repository changes no assistant configuration.
+For installation into coding agents (Codex, Claude Code, Cursor, Antigravity, etc.), use the official CLI from the [skills.sh](https://skills.sh) registry:
+
+```bash
+# All skills in repository
+npx skills add siberius/ui-cliche --full-depth -g -a codex
+
+# Selected skill
+npx skills add siberius/ui-cliche --skill cliche --full-depth -g -a codex
+```
+
+In chat, attach `SKILL.md` or paste its complete contents. Give a file-capable agent the actual path and ask it to read the file. In an environment with skill support, use the complete folder according to that environment's rules. This repository changes no assistant configuration without your explicit command.
 
 `SKILL.md` contains every binding rule. `references/examples.md` supplies optional context for ambiguous cases, alongside the skill or as another attachment. The README and this documentation need not be loaded for every task.
 

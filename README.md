@@ -1,6 +1,9 @@
 # UI Klišé (Text without AI Clichés)
 
 [Česky](README.cs.md)
+[![Skills.sh](https://img.shields.io/badge/skills.sh-Install-blue)](https://skills.sh/siberius/ui-cliche)
+
+> 📖 **Article and context on Vibemaker:** [Texty rozhraní bez AI klišé](https://vibemaker.cz/clanek/psani-bez-ai-otisku/)
 
 Provider-independent Markdown skills for text without AI clichés. The flagship **cliche** skill edits or audits any human-facing text (articles, documentation, e-mail, marketing, web copy) with a lean English core and a Czech localization layer loaded only when needed. The specialized **ui-copy** skills (`ui-copy-cs`, `ui-copy-en`) cover interface strings inside code while programming, with protected technical tokens and accessibility rules.
 
@@ -11,6 +14,31 @@ Provider-independent Markdown skills for text without AI clichés. The flagship 
 | [ui-copy-en/SKILL.md](ui-copy-en/SKILL.md) | English interface strings in code | [English examples](ui-copy-en/references/examples.md) |
 
 The cliche skill uses progressive disclosure: its SKILL.md holds only the identity, the two jobs, the core principles and the quality gate. Pattern catalogs, the Czech lexicon, Czech syntax and typography live in `references/` and are read only for the language and task at hand; an English edit never loads the Czech layer.
+
+## Installation and Quick Start
+
+Install with the [Skills CLI](https://github.com/vercel-labs/skills) from [skills.sh](https://skills.sh). Use `-g` for user-level installation, or choose a specific agent with `-a` (`-a codex`, `-a claude-code`, etc.):
+
+```bash
+# Install all skills in this repository (cliche, ui-copy-cs, ui-copy-en)
+npx skills add siberius/ui-cliche --full-depth -g -a codex
+
+# Or install only the general human-facing text editing skill
+npx skills add siberius/ui-cliche --skill cliche --full-depth -g -a codex
+
+# Or install UI interface copy skills for code
+npx skills add siberius/ui-cliche --skill ui-copy-cs --full-depth -g -a codex
+npx skills add siberius/ui-cliche --skill ui-copy-en --full-depth -g -a codex
+
+# List available skills in this repository
+npx skills add siberius/ui-cliche --full-depth --list
+```
+
+Without `--agent`, `skills use` prints a prepared prompt. To launch a supported agent with a skill temporarily:
+
+```bash
+npx skills use siberius/ui-cliche --skill cliche --full-depth --agent codex
+```
 
 ## For all AI assistants
 
@@ -71,14 +99,14 @@ The skills define an editorial style. They do not identify AI authorship or opti
 
 Version: cliche 1.0.0 · ui-copy 1.1.0 · 2026-11-10
 
-## Author
+### Author
 
-**Luděk Sušický**: biologist, secondary-school and university teacher of computing subjects
+**Luděk Sušický** — biologist, secondary-school and university teacher of computing subjects
 
 - E-mail: [ludek.susicky@gmail.com](mailto:ludek.susicky@gmail.com)
 - X: [@ludeksusicky](https://x.com/ludeksusicky)
 - LinkedIn: [Luděk Sušický](https://www.linkedin.com/in/ludek-susicky/)
-- GitHub: [@siberius](https://github.com/siberius), more educational projects and open-source applications
+- GitHub: [@siberius](https://github.com/siberius) — more educational projects and open-source applications
 
 ## Lineage
 

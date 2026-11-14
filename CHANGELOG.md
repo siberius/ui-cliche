@@ -4,6 +4,12 @@ Copyright © 2026 Luděk Sušický
 
 Versioning is per skill; the repository hosts more than one.
 
+## Release 1.2.0 (2026-11-14)
+
+- Add skills.sh ecosystem support: installation guides via Skills CLI, catalog badges and discovery sections.
+- Configure repository topics (agent-skills, skills, claude-skills, copywriting, localization) for automated directory crawling.
+- Align author block with canonical portfolio standard across README editions.
+
 ## Unreleased: documentation and version alignment (2026-11-11)
 
 - Add the `cliche` skill to the `md-skills` bank README so the flagship text skill is discoverable next to `ui-copy-cs` and `ui-copy-en`.
