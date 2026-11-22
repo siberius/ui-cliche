@@ -1,5 +1,12 @@
 # Třístupňová terminologická triáž (cs-lexicon-triage)
 
+Copyright © 2026 Luděk Sušický (MIT License)
+
+> **Metodická inspirace a zdroje:**  
+> - Koncept triáže podezřelých kalků: inspirace z projektů *kalky* (Zdeněk Dvořák, MIT) a *anti-ai-slop-cz* (nowork-ai, MIT).  
+> - Práce se zástupnými značkami při absenci dat: *Humanizátor* (kubicek.ai).  
+> - Třístupňový rozhodovací katalog pro doménové texty, posunuté kalky a neusazené termíny v digitálních produktech: původní autorská formulace pro projekt `ui-cliche v2.0`.
+
 Tato reference slouží LLM v roli adjudikátora pro posouzení kandidátů z linteru (`soft_candidate`) a eliminaci planých poplachů na platném českém jazyce.
 
 ## Zlaté pravidlo adjudikace

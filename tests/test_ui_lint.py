@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 """
 test_ui_lint.py - Jednotkové testy deterministického linteru ui_lint.py.
-Každé pravidlo má povinnou dvojici: pozitivní test (musí zachytit) a protipříklad (nesmí zachytit).
+
+Autor: Luděk Sušický (MIT License)
+Metodická inspirace:
+  - Zásada povinné dvojice pozitivní vzor + protipříklad pro každé pravidlo
+    po vzoru regresního testování projektu kalky (Zdeněk Dvořák, MIT).
+Testovací sada, scénáře a verifikační logika:
+  Původní autorský kód pro projekt ui-cliche v2.0.
 """
 
 import os

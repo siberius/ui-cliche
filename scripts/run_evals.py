@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
 """
 run_evals.py - Spouštěč a vyhodnocovač evaluační sady ui-cliche v2.0.
-Vyhodnocuje deterministické aserce, záchyt vad v Koši A a míru planých poplachů (FPR) v Koši B.
-Generuje evals/benchmark.json.
+
+Autor: Luděk Sušický (MIT License)
+Metodická inspirace:
+  - Evaluační rámec Evals First a struktura behaviorálních scénářů
+    podle metodiky Anthropic skill-creator.
+Implementace runneru, asercí a generování reportu benchmark.json:
+  Původní autorský kód pro projekt ui-cliche v2.0.
 """
 
 import json

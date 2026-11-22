@@ -1,6 +1,16 @@
 #!/usr/bin/env python3
 """
 ui_lint.py - Deterministický linter českých mikrotextů v UI, na webu a slidech.
+
+Autor: Luděk Sušický (MIT License)
+Metodická inspirace:
+  - Architektura bezdependenčního deterministického linteru a párového testování
+    po vzoru projektu kalky (Zdeněk Dvořák, MIT).
+  - Princip oddělení tvrdých vad od nezávazných kandidátů k posouzení
+    po vzoru projektu Korektor (David Fogl / Continero).
+Implementace parseru, maskování i18n proměnných, profilů výčtů ÚJČ a pravidel pro rozhraní:
+  Původní autorský kód pro projekt ui-cliche v2.0.
+
 Standard: Python 3.9+ bez externích závislostí.
 Vrací:
   0 - Čistý text (žádné vady ani podezřelí kandidáti -> verdikt BEZ ÚPRAV)

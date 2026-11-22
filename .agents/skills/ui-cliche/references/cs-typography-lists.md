@@ -1,5 +1,12 @@
 # Česká typografie a interpunkce výčtů (cs-typography-lists)
 
+Copyright © 2026 Luděk Sušický (MIT License)
+
+> **Normativní autority a zdroje:**  
+> - Pravidla pro psaní výčtů, uvozovek a vynechávání teček u titulků: *Ústav pro jazyk český AV ČR (ÚJČ AV ČR)*.  
+> - Typografická úprava čísel, pomlček a značek: *ČSN 01 6910*.  
+> - Formulace čtyř profilů výčtů A–D pro digitální aplikace a slidy: původní autorská specifikace pro projekt `ui-cliche v2.0`.
+
 Závazná referenční pravidla podle norem ÚJČ AV ČR a ČSN 01 6910 pro rozhraní aplikací, webové stránky a prezentace.
 
 ---

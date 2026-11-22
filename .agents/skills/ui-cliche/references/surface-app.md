@@ -1,5 +1,11 @@
 # Povrch: Aplikace a digitální produkty (App UI)
 
+Copyright © 2026 Luděk Sušický (MIT License)
+
+> **Metodická inspirace a zdroje:**  
+> - Pravidla pro dokonavý infinitiv na tlačítkách a činný rod v tooltipech: *Mozilla L10n CS (Czech General Style Guide)*.  
+> - Pravidla pro audit 6 stavů rozhraní, UX Commitment Guard a ochranu i18n proměnných: původní autorská metodika pro projekt `ui-cliche v2.0`.
+
 Referenční pravidla pro české texty v uživatelských rozhraních, formulářích a lokalizačních souborech (vychází z Mozilla L10n CS a české UX praxe).
 
 ## 1. Tlačítka a primární akce

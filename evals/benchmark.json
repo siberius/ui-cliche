@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-11-22T15:17:25Z",
+  "timestamp": "2026-11-22T15:34:23Z",
   "version": "2.0.0",
   "scenarios_evaluated": 15,
   "metrics": {
     "basket_a_recall": "100.0%",
     "basket_b_false_positive_rate": "0.0%",
     "basket_c_i18n_preservation": "100.0%",
-    "linter_avg_latency_ms": 40.73
+    "linter_avg_latency_ms": 42.58
   },
   "basket_stats": {
     "basket_a_positive_cliche_and_flaws": {
@@ -31,7 +31,7 @@
       "exit_code": 1,
       "hard_count": 2,
       "soft_count": 3,
-      "duration_ms": 57.23,
+      "duration_ms": 43.68,
       "status": "PASS"
     },
     {
@@ -41,7 +41,7 @@
       "exit_code": 1,
       "hard_count": 2,
       "soft_count": 1,
-      "duration_ms": 40.41,
+      "duration_ms": 39.16,
       "status": "PASS"
     },
     {
@@ -51,7 +51,7 @@
       "exit_code": 1,
       "hard_count": 1,
       "soft_count": 2,
-      "duration_ms": 39.74,
+      "duration_ms": 39.56,
       "status": "PASS"
     },
     {
@@ -61,7 +61,7 @@
       "exit_code": 2,
       "hard_count": 0,
       "soft_count": 1,
-      "duration_ms": 40.54,
+      "duration_ms": 39.25,
       "status": "PASS"
     },
     {
@@ -71,7 +71,7 @@
       "exit_code": 2,
       "hard_count": 0,
       "soft_count": 2,
-      "duration_ms": 37.7,
+      "duration_ms": 40.47,
       "status": "PASS"
     },
     {
@@ -81,7 +81,7 @@
       "exit_code": 1,
       "hard_count": 3,
       "soft_count": 0,
-      "duration_ms": 37.55,
+      "duration_ms": 39.72,
       "status": "PASS"
     },
     {
@@ -91,7 +91,7 @@
       "exit_code": 0,
       "hard_count": 0,
       "soft_count": 0,
-      "duration_ms": 40.29,
+      "duration_ms": 41.57,
       "status": "PASS"
     },
     {
@@ -101,7 +101,7 @@
       "exit_code": 0,
       "hard_count": 0,
       "soft_count": 0,
-      "duration_ms": 39.87,
+      "duration_ms": 41.68,
       "status": "PASS"
     },
     {
@@ -111,7 +111,7 @@
       "exit_code": 2,
       "hard_count": 0,
       "soft_count": 1,
-      "duration_ms": 37.83,
+      "duration_ms": 42.2,
       "status": "PASS"
     },
     {
@@ -121,7 +121,7 @@
       "exit_code": 0,
       "hard_count": 0,
       "soft_count": 0,
-      "duration_ms": 38.62,
+      "duration_ms": 41.58,
       "status": "PASS"
     },
     {
@@ -131,7 +131,7 @@
       "exit_code": 0,
       "hard_count": 0,
       "soft_count": 0,
-      "duration_ms": 40.66,
+      "duration_ms": 43.08,
       "status": "PASS"
     },
     {
@@ -141,7 +141,7 @@
       "exit_code": 1,
       "hard_count": 1,
       "soft_count": 0,
-      "duration_ms": 39.33,
+      "duration_ms": 42.82,
       "status": "PASS"
     },
     {
@@ -151,7 +151,7 @@
       "exit_code": 0,
       "hard_count": 0,
       "soft_count": 0,
-      "duration_ms": 41.77,
+      "duration_ms": 52.39,
       "status": "PASS"
     },
     {
@@ -161,7 +161,7 @@
       "exit_code": 2,
       "hard_count": 0,
       "soft_count": 1,
-      "duration_ms": 39.16,
+      "duration_ms": 46.15,
       "status": "PASS"
     },
     {
@@ -171,7 +171,7 @@
       "exit_code": 2,
       "hard_count": 0,
       "soft_count": 2,
-      "duration_ms": 40.24,
+      "duration_ms": 45.36,
       "status": "PASS"
     }
   ]
