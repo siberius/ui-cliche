@@ -1,0 +1,14 @@
+{
+  "title": "Nákupní košík",
+  "summary": "Máte vybráno 2 položky v celkové hodnotě 1 450 Kč.",
+  "deliveryOptionsHeading": "Způsob doručení",
+  "options": [
+    "Doručení na výdejní místo",
+    "Doručení kurýrem na adresu",
+    "Osobní odběr na prodejně"
+  ],
+  "buttons": {
+    "continue": "Pokračovat k platbě",
+    "back": "Zpět do obchodu"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "courseCode": "AMK200002",
+  "title": "Molekulární biologie buňky",
+  "credits": "{credits, plural, one{# kredit} few{# kredity} other{# kreditů}}",
+  "enrollmentStatus": "Zápis předmětu otevřen",
+  "prerequisitesHeading": "Prerekvizity",
+  "prerequisitesDescription": "Pro zápis tohoto předmětu je nutné mít splněn předmět Obecná biologie ({courseCode}).",
+  "actions": {
+    "enroll": "Zapsat předmět",
+    "back": "Zpět na studijní plán"
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "benchmark_name": "ui-cliche-v2-golden-evals",
+  "version": "2.0.0",
+  "description": "Zlatá evaluační sada 15 scénářů rozdělených do tří košů (Koš A: pozitivní vady, Koš B: negativní čisté texty, Koš C: hraniční stavy a i18n).",
+  "scenarios": [
+    {
+      "eval_id": "pos_01_saas_landing",
+      "bucket": "basket_a_positive_cliche_and_flaws",
+      "surface": "web",
+      "prompt": "Zkontroluj texty landing page pro náš SaaS produkt.",
+      "input_file": "evals/corpus/messy_saas_landing.html",
+      "assertions": [
+        {
+          "id": "catch_title_case",
+          "type": "deterministic_regex",
+          "rule": "Nález zachytí anglický Title Case v českých nadpisech ('Nejlepší Nástroj Pro Týmy')."
+        },
+        {
+          "id": "catch_unsupported_superlatives",
+          "type": "llm_judge",
+          "rule": "Označí prázdné superlativy ('revoluční platforma nové generace', 'bezkonkurenční rychlost') k nahrazení věcným přínosem."
+        },
+        {
+          "id": "no_fact_hallucination",
+          "type": "llm_judge",
+          "rule": "Při návrhu úprav nevymýšlí neexistující čísla ani certifikace; chybějící data označí štítkem [ověřit: ...]."
+        }
+      ]
+    },
+    {
+      "eval_id": "pos_02_modal_imperative",
+      "bucket": "basket_a_positive_cliche_and_flaws",
+      "surface": "app",
+      "prompt": "Zkontroluj texty v modálu pro smazání projektu.",
+      "input_file": "evals/corpus/messy_modal_imperative.json",
+      "assertions": [
+        {
+          "id": "catch_button_periods",
+          "type": "deterministic_regex",
+          "rule": "Zachytí koncové tečky za tlačítky ('Smazat projekt.', 'Zrušit.')."
+        },
+        {
+          "id": "enforce_infinitive_buttons",
+          "type": "llm_judge",
+          "rule": "Opraví rozkazovací způsob tlačítek ('Smaž', 'Klikni') na dokonavý infinitiv ('Smazat', 'Zrušit')."
+        },
+        {
+          "id": "eliminate_inappropriate_humor",
+          "type": "deterministic_regex",
+          "rule": "Zachytí nepatřičný humor ('Upsík, projekt je pryč') v chybovém stavu."
+        }
+      ]
+    },
+    {
+      "eval_id": "pos_03_slides_bullets",
+      "bucket": "basket_a_positive_cliche_and_flaws",
+      "surface": "slides",
+      "prompt": "Zreviduj odrážky a titulky na tomto slidu prezentace.",
+      "input_file": "evals/corpus/messy_slides_bullets.md",
+      "assertions": [
+        {
+          "id": "catch_mixed_punctuation",
+          "type": "deterministic_regex",
+          "rule": "Linter zachytí smíšenou interpunkci položek výčtu (LIST_MIXED_PUNCTUATION)."
+        },
+        {
+          "id": "triage_misplaced_prerekvizity",
+          "type": "llm_judge",
+          "rule": "V obchodní prezentaci nahradí termín 'prerekvizity' za 'co potřebujete předem' nebo 'vstupní podmínky'."
+        },
+        {
+          "id": "triage_dead_addresses",
+          "type": "llm_judge",
+          "rule": "Nahradí kalk 'mrtvé adresy' za 'nefunkční odkazy / neexistující stránky'."
+        }
+      ]
+    },
+    {
+      "eval_id": "pos_04_bad_link_texts",
+      "bucket": "basket_a_positive_cliche_and_flaws",
+      "surface": "app",
+      "prompt": "Zkontroluj odkazy a nápovědy v nastavení profilu.",
+      "input_file": "evals/corpus/messy_links.json",
+      "assertions": [
+        {
+          "id": "replace_vague_links",
+          "type": "llm_judge",
+          "rule": "Nahradí generické odkazy 'Více' a 'Klikněte zde' konkrétním cílem odkazu."
+        }
+      ]
+    },
+    {
+      "eval_id": "pos_05_unverified_cta",
+      "bucket": "basket_a_positive_cliche_and_flaws",
+      "surface": "web",
+      "prompt": "Zkontroluj CTA tlačítka a ceníkové texty na webu.",
+      "input_file": "evals/corpus/messy_cta_commitments.json",
+      "assertions": [
+        {
+          "id": "flag_unverified_commitments",
+          "type": "llm_judge",
+          "rule": "Označí nepravdivé tvrzení 'Aktivujte ihned zdarma bez platební karty' zástupnou značkou [ověřit obchodní podmínku]."
+        }
+      ]
+    },
+    {
+      "eval_id": "pos_06_em_dashes",
+      "bucket": "basket_a_positive_cliche_and_flaws",
+      "surface": "app",
+      "prompt": "Zkontroluj typografii v systémových hláškách.",
+      "input_file": "evals/corpus/messy_typography_dashes.md",
+      "assertions": [
+        {
+          "id": "catch_all_em_dashes",
+          "type": "deterministic_regex",
+          "rule": "100% záchyt dlouhých pomlček (—) s návrhem náhrady za českou krátkou pomlčku (–) s mezerami."
+        }
+      ]
+    },
+    {
+      "eval_id": "neg_01_uni_prerekvizity",
+      "bucket": "basket_b_true_negative_do_not_touch",
+      "surface": "app",
+      "prompt": "Zkontroluj texty obrazovky pro zápis předmětu v univerzitním IS.",
+      "input_file": "evals/corpus/clean_uni_syllabus.json",
+      "assertions": [
+        {
+          "id": "keep_valid_prerekvizity",
+          "type": "deterministic_preserve",
+          "rule": "Slovo 'Prerekvizity' zůstalo zachováno a nebylo označeno jako blokátor."
+        },
+        {
+          "id": "preserve_icu_placeholders",
+          "type": "deterministic_preserve",
+          "rule": "Všechny proměnné {credits} a {courseCode} zůstaly nezměněny."
+        },
+        {
+          "id": "verdict_no_rewrites",
+          "type": "llm_judge",
+          "rule": "Výstup vrací verdikt BEZ ÚPRAV nebo nejvýše 0 blokátorů a nevymýšlí kosmetické přepisy čistých českých tlačítek."
+        }
+      ]
+    },
+    {
+      "eval_id": "neg_02_hr_hygienicke_faktory",
+      "bucket": "basket_b_true_negative_do_not_touch",
+      "surface": "slides",
+      "prompt": "Zkontroluj slide z odborné HR přednášky o motivaci zaměstnanců.",
+      "input_file": "evals/corpus/clean_hr_slides.md",
+      "assertions": [
+        {
+          "id": "keep_hygienicke_faktory",
+          "type": "deterministic_preserve",
+          "rule": "Odborný termín 'Hygienické faktory' z Herzbergovy teorie zůstal zachován."
+        },
+        {
+          "id": "respect_profile_a_list",
+          "type": "deterministic_preserve",
+          "rule": "Heslovitý výčet bez teček je vyhodnocen jako správný Profil A ÚJČ."
+        }
+      ]
+    },
+    {
+      "eval_id": "neg_03_tech_robustni_sifrovani",
+      "bucket": "basket_b_true_negative_do_not_touch",
+      "surface": "app",
+      "prompt": "Zkontroluj technický popis v bezpečnostním nastavení.",
+      "input_file": "evals/corpus/clean_tech_specs.json",
+      "assertions": [
+        {
+          "id": "keep_robust_encryption",
+          "type": "deterministic_preserve",
+          "rule": "Termín 'robustní šifrování AES-256' zůstal zachován, protože je podložen konkrétním mechanismem."
+        }
+      ]
+    },
+    {
+      "eval_id": "neg_04_clean_checkout",
+      "bucket": "basket_b_true_negative_do_not_touch",
+      "surface": "app",
+      "prompt": "Zkontroluj texty v českém nákupním košíku.",
+      "input_file": "evals/corpus/clean_checkout_app.json",
+      "assertions": [
+        {
+          "id": "zero_blockers",
+          "type": "deterministic_preserve",
+          "rule": "Linter i LLM vracejí 0 blokátorů."
+        },
+        {
+          "id": "return_bez_uprav",
+          "type": "llm_judge",
+          "rule": "Výsledkem je explicitní verdikt BEZ ÚPRAV."
+        }
+      ]
+    },
+    {
+      "eval_id": "neg_05_clean_faq",
+      "bucket": "basket_b_true_negative_do_not_touch",
+      "surface": "web",
+      "prompt": "Zkontroluj formátování FAQ sekce na webu.",
+      "input_file": "evals/corpus/clean_faq_web.md",
+      "assertions": [
+        {
+          "id": "validate_profile_b",
+          "type": "deterministic_preserve",
+          "rule": "Syntakticky navázaný výčet s malými písmeny, středníky a tečkou na konci je uznán jako platný Profil B ÚJČ."
+        }
+      ]
+    },
+    {
+      "eval_id": "edge_01_i18n_icu",
+      "bucket": "basket_c_boundary_and_i18n",
+      "surface": "app",
+      "prompt": "Zkontroluj a uprav chybné formulace v cs.json, ale zachovej proměnné.",
+      "input_file": "evals/corpus/boundary_i18n_icu.json",
+      "assertions": [
+        {
+          "id": "preserve_icu_plural",
+          "type": "deterministic_preserve",
+          "rule": "Komplexní syntaxe '{count, plural, one{# den} few{# dny} other{# dní}}' zůstala zcela neporušena."
+        },
+        {
+          "id": "preserve_html_tags",
+          "type": "deterministic_preserve",
+          "rule": "Všechny HTML značky jako <strong> a <span> zůstaly zachovány."
+        }
+      ]
+    },
+    {
+      "eval_id": "edge_02_mixed_tone",
+      "bucket": "basket_c_boundary_and_i18n",
+      "surface": "app",
+      "prompt": "Zkontroluj konzistenci formuláře a nápověd v administraci.",
+      "input_file": "evals/corpus/boundary_mixed_tone.json",
+      "assertions": [
+        {
+          "id": "detect_tone_collision",
+          "type": "llm_judge",
+          "rule": "Detekuje rozpor mezi tykáním ('Zadej svůj e-mail') a vykáním ('Stiskněte tlačítko pro uložení')."
+        }
+      ]
+    },
+    {
+      "eval_id": "edge_03_network_drop",
+      "bucket": "basket_c_boundary_and_i18n",
+      "surface": "app",
+      "prompt": "Zkontroluj hlášku zobrazenou po timeoutu platby.",
+      "input_file": "evals/corpus/boundary_network_drop.json",
+      "assertions": [
+        {
+          "id": "prevent_double_charge_advice",
+          "type": "llm_judge",
+          "rule": "Zakáže hlášku 'Zkuste to znovu' a navrhne bezpečné ověření stavu platby před opakováním."
+        }
+      ]
+    },
+    {
+      "eval_id": "edge_04_out_of_scope_blog",
+      "bucket": "basket_c_boundary_and_i18n",
+      "surface": "none",
+      "prompt": "Zkontroluj a kompletně přepiš tento blogový článek o cloudových architekturách.",
+      "input_file": "evals/corpus/out_of_scope_blog.md",
+      "assertions": [
+        {
+          "id": "refuse_full_rewrite",
+          "type": "llm_judge",
+          "rule": "Skill tvrdě odmítne plný přepis 800slovného článku a nabídne pouze selektivní kontrolu nadpisů, výčtů a CTA tlačítek."
+        }
+      ]
+    }
+  ]
+}

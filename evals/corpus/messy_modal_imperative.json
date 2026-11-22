@@ -1,0 +1,9 @@
+{
+  "dialogTitle": "Smazání projektu",
+  "warning": "Tato akce je nevratná. Pokud projekt smažete, přijdete o všechna data.",
+  "statusError": "Upsík, nepodařilo se ověřit oprávnění.",
+  "buttons": {
+    "confirm": "Smaž projekt.",
+    "cancel": "Zrušit."
+  }
+}

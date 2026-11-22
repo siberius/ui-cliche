@@ -1,0 +1,173 @@
+{
+  "description": "Testovací sada 24 českých dotazů pro měření přesnosti aktivace skillu ui-cliche v2.0 (12 v záběru, 12 mimo záběr). Cíl: Přesnost >= 90 %.",
+  "evals": [
+    {
+      "id": "trig_01_app_modal",
+      "query": "Zkontroluj mi texty v modálu pro smazání účtu a potvrzení akce.",
+      "should_trigger": true,
+      "surface": "app",
+      "reason": "Dialogové okno aplikace (App UI)."
+    },
+    {
+      "id": "trig_02_web_hero_pricing",
+      "query": "Vypiluj hero sekci a ceník na našem webu.",
+      "should_trigger": true,
+      "surface": "web",
+      "reason": "Konverzní webová plocha (Web)."
+    },
+    {
+      "id": "trig_03_slides_bullets",
+      "query": "Sjednoť odrážky v prezentaci pro vedení.",
+      "should_trigger": true,
+      "surface": "slides",
+      "reason": "Odrážkový výčet v prezentaci (Slides)."
+    },
+    {
+      "id": "trig_04_app_buttons",
+      "query": "Zkontroluj popisky tlačítek v registračním formuláři.",
+      "should_trigger": true,
+      "surface": "app",
+      "reason": "Tlačítka a formulář aplikace."
+    },
+    {
+      "id": "trig_05_app_addressing",
+      "query": "Máme v aplikaci konzistentní tykání a vykání na profilové stránce?",
+      "should_trigger": true,
+      "surface": "app",
+      "reason": "Kontrola tónu a oslovení v UI."
+    },
+    {
+      "id": "trig_06_web_cta_table",
+      "query": "Uprav ceníkovou tabulku a CTA tlačítka pro náš SaaS produkt.",
+      "should_trigger": true,
+      "surface": "web",
+      "reason": "Ceník a CTA prvky na webu."
+    },
+    {
+      "id": "trig_07_app_i18n",
+      "query": "Přelož a zkontroluj tyto i18n řetězce v cs.json pro mobilní aplikaci.",
+      "should_trigger": true,
+      "surface": "app",
+      "reason": "Lokalizační soubor aplikace."
+    },
+    {
+      "id": "trig_08_slides_titles",
+      "query": "Prohlédni titulky slidů a ověř, zda nesou zjištění a nejsou to jen pasivní štítky.",
+      "should_trigger": true,
+      "surface": "slides",
+      "reason": "Titulky prezentačních slidů."
+    },
+    {
+      "id": "trig_09_app_error_msg",
+      "query": "Zkontroluj chybové hlášky při neúspěšné platbě kartou.",
+      "should_trigger": true,
+      "surface": "app",
+      "reason": "Chybové a systémové stavy rozhraní."
+    },
+    {
+      "id": "trig_10_web_features",
+      "query": "Zreviduj texty v trust baru a kartách vlastností na homepage.",
+      "should_trigger": true,
+      "surface": "web",
+      "reason": "Karty vlastností a trust bar na webu."
+    },
+    {
+      "id": "trig_11_slides_finance",
+      "query": "Zkontroluj interpunkci odrážek na slidu s finančními výsledky za Q3.",
+      "should_trigger": true,
+      "surface": "slides",
+      "reason": "Interpunkce výčtu na slidu."
+    },
+    {
+      "id": "trig_12_app_tooltips",
+      "query": "Podívej se na tooltipy v našem editačním panelu a sjednoť jejich formulaci.",
+      "should_trigger": true,
+      "surface": "app",
+      "reason": "Tooltipy a nápovědy v aplikaci."
+    },
+    {
+      "id": "trig_13_out_blog_post",
+      "query": "Napiš blogový článek o bezpečnosti cloudu a trendech pro rok 2027.",
+      "should_trigger": false,
+      "surface": "none",
+      "reason": "Blogový článek (dlouhá próza mimo záběr)."
+    },
+    {
+      "id": "trig_14_out_linkedin",
+      "query": "Zlidšti tento LinkedIn příspěvek o mém kariérním posunu.",
+      "should_trigger": false,
+      "surface": "none",
+      "reason": "Příspěvek na sociální sítě mimo záběr."
+    },
+    {
+      "id": "trig_15_out_contract",
+      "query": "Shrň tuto nájemní smlouvu a vypiš hlavní rizika pro nájemce.",
+      "should_trigger": false,
+      "surface": "none",
+      "reason": "Právní smlouva a dokument mimo záběr."
+    },
+    {
+      "id": "trig_16_out_newsletter",
+      "query": "Napiš marketingový newsletter o slevové akci na 500 slov.",
+      "should_trigger": false,
+      "surface": "none",
+      "reason": "Marketingový e-mail nad 300 slov mimo záběr."
+    },
+    {
+      "id": "trig_17_out_thesis",
+      "query": "Oprav stylistiku v mé diplomové práci o biologické rozmanitosti.",
+      "should_trigger": false,
+      "surface": "none",
+      "reason": "Akademická práce mimo záběr."
+    },
+    {
+      "id": "trig_18_out_fiction",
+      "query": "Napiš krátkou sci-fi povídku o cestování časem.",
+      "should_trigger": false,
+      "surface": "none",
+      "reason": "Beletrie mimo záběr."
+    },
+    {
+      "id": "trig_19_out_press_release",
+      "query": "Vytvoř tiskovou zprávu o otevření nové pobočky v Brně.",
+      "should_trigger": false,
+      "surface": "none",
+      "reason": "Tisková zpráva a PR text mimo záběr."
+    },
+    {
+      "id": "trig_20_out_manual",
+      "query": "Přepiš tento 1000slovný návod na montáž nábytku do čtivější podoby.",
+      "should_trigger": false,
+      "surface": "none",
+      "reason": "Dlouhý technický manuál mimo záběr."
+    },
+    {
+      "id": "trig_21_out_cover_letter",
+      "query": "Zformuluj motivační dopis na pozici seniorního analytika.",
+      "should_trigger": false,
+      "surface": "none",
+      "reason": "Osobní korespondence mimo záběr."
+    },
+    {
+      "id": "trig_22_out_political_essay",
+      "query": "Analyzuj argumentaci v tomto politickém komentáři z novin.",
+      "should_trigger": false,
+      "surface": "none",
+      "reason": "Esej a novinový komentář mimo záběr."
+    },
+    {
+      "id": "trig_23_out_long_email",
+      "query": "Napiš e-mail s podrobným vysvětlením ročního vyúčtování na dvě strany.",
+      "should_trigger": false,
+      "surface": "none",
+      "reason": "E-mail nad 300 slov mimo záběr."
+    },
+    {
+      "id": "trig_24_out_textbook",
+      "query": "Přelož a uprav celou kapitolu z učebnice dějepisu.",
+      "should_trigger": false,
+      "surface": "none",
+      "reason": "Učební text a knižní kapitola mimo záběr."
+    }
+  ]
+}

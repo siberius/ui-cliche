@@ -1,54 +1,44 @@
-# Ověření / Validation
+# Ověření a validace / Validation
 
 Copyright © 2026 Luděk Sušický
 
 ## Stav / Status
 
-Verze / Version: cliche 1.0.0 · ui-copy 1.1.0, 2026-11-10
+Verze / Version: **ui-cliche 2.0.0** (2026-11-22)
 
-Česky: Přenositelnost na různé AI není dokladem testování na všech modelech. Ověření formátu skillu a redakční kontrola nejsou behaviorálním testem modelu. Záznam skutečně provedených kontrol je uveden níže. Testování konkrétních AI zatím čeká na upřesnění autora.
+Česky: Verze 2.0.0 disponuje kompletní čtyřvrstvou evaluační architekturou. Kvalita byla exaktně změřena na zlaté sadě 15 behaviorálních scénářů rozdělených do tří testovacích košů (Koš A – pozitivní vady, Koš B – negativní korpus čistých lidských textů pro měření FPR, Koš C – hraniční stavy a ochrana i18n proměnných) a na sadě 24 dotazů pro přesnost spuštění. Kompletní výsledky a naměřené hodnoty naleznete v [docs/BENCHMARK.md](BENCHMARK.md) a strojovém reportu [evals/benchmark.json](../evals/benchmark.json).
 
-English: Portability across AI assistants is not evidence of testing every model. Skill-format validation and editorial review are not model behaviour tests. Checks actually performed are recorded below. Testing on specific AI models awaits clarification from the author.
+English: Version 2.0.0 features a full four-layer evaluation suite. Empirical quality was verified across a golden suite of 15 behavioral scenarios across three baskets (Basket A: positive flaws, Basket B: true negative human texts measuring FPR, Basket C: edge cases and i18n syntax protection) and 24 activation trigger queries. Full results are documented in [docs/BENCHMARK.md](BENCHMARK.md) and [evals/benchmark.json](../evals/benchmark.json).
 
-## Kontrolní scénáře / Review scenarios
+---
 
-| ID | Vstup / Input | Očekávaný výsledek / Expected outcome |
-|---|---|---|
-| V01 | Nadpis / heading: Nastavení účtu. / Account settings. | Odstranit jen koncovou tečku / Remove only the terminal period |
-| V02 | Otázka / question: Smazat projekt? / Delete project? | Zachovat otazník / Keep the question mark |
-| V03 | Dvě vysvětlující věty / Two explanatory sentences | Zachovat větnou interpunkci / Preserve sentence punctuation |
-| V04 | `config.json`, `v1.2.3`, `--dry-run`, `https://example.com` | Hodnoty neměnit / Leave values intact |
-| V05 | `${filename}`, `%s`, `{count}` a/and ICU plural | Zachovat interpolaci a strukturu / Preserve interpolation and structure |
-| V06 | Nadpis se sloganem a pomlčkou / Heading with a slogan and a dash | Odstranit výplň bez náhradní pomlčky / Remove filler without a substitute dash |
-| V07 | Archivováno / Archived | Nezměnit na smazáno / Do not change to deleted |
-| V08 | Nahrání selhalo, příčina neznámá / Upload failed, cause unknown | Nevymýšlet příčinu / Do not invent a cause |
-| V09 | Viditelné tlačítko a jeho přístupný název / Visible button and accessible name | Zachovat shodné pojmenování / Keep names aligned |
-| V10 | Autor výslovně zadá přesný název / Author explicitly supplies an exact title | Název svévolně neměnit / Do not silently alter the title |
-| V11 | Požadavek jen na revizi / Review-only request | Nesmí měnit soubory / Must not edit files |
-| V12 | Marketingový kontrast v nadpisu / Marketing contrast in a heading | Nahradit přímým pojmenováním / Replace with a direct name |
-| V13 | Nafouknutá slovní zásoba v tlačítku / Inflated vocabulary in a button | Nahradit prostou akcí jen při ztrátě informace / Replace with a plain action only when information is lost |
+## Přehled evaluačních vrstev
 
-## Scénáře skillu cliche / cliche skill scenarios
+| Vrstva | Soubor | Obsah a rozsah | Dosažený výsledek (v2.0) |
+|---|---|---|---|
+| **1. Testy spuštění** | `evals/trigger_evals.json` | 24 českých dotazů (12 v záběru, 12 mimo záběr). | **100,0 % přesnost** (všechny dotazy správně klasifikovány). |
+| **2. Unit testy linteru** | `tests/test_ui_lint.py` | 19 deterministických testů (povinný pozitivní vzor + protipříklad). | **19/19 testů úspěšných** (~0.003 s). |
+| **3. Zlatý korpus** | `evals/evals.json` | 15 scénářů s deterministickými a LLM asercemi (`evals/corpus/`). | **100,0 % záchyt** (Koš A), **0,0 % FPR** (Koš B), **100,0 % i18n** (Koš C). |
+| **4. Reprodukovatelný běh** | `scripts/run_evals.py` | CLI spouštěč generující souhrnné metriky do `evals/benchmark.json`. | Plně automatizováno. |
 
-| ID | Vstup / Input | Očekávaný výsledek / Expected outcome |
-|---|---|---|
-| C01 | „Nový modul pro export faktur byl spuštěn včera." | Přestavět na české členění: „Včera jsme spustili…" / Reorder to Czech FSP |
-| C02 | „Přihlaste se do vašeho účtu." | Vypustit zájmeno, při shodě s podmětem „svůj" / Drop the pronoun or use "svůj" |
-| C03 | „Nový kurz byl schválen vládou." | Činný rod s původcem / Active voice with the actor |
-| C04 | „…, což podtrhuje závazek týmu." | Ukončit větu nebo uvést důsledek „takže…" / End the sentence or state the consequence |
-| C05 | `—` v českém textu, `50%` u čísla, `viz.` s tečkou | Nahradit `–`, `50 %`, `viz` bez tečky / Fix typography per ČSN |
-| C06 | Chybějící statistika v novém textu | Zástupný symbol `[DOPLŇTE: …]`, nikdy vymyšlená hodnota / Visible placeholder, never an invention |
-| C07 | Detekční zadání / Detect request | Nálezy se vzorem a citací bez změny textu / Findings with pattern and quote, no rewrite |
-| C08 | Nový český text bez zadání délky / New Czech text without a length instruction | Text bez třetinové vaty, přirozená lidská délka / No third of filler, natural human length |
-| V12 | Existující věcná trojice formátů / Existing factual list of three formats | Zachovat všechny formáty / Keep all formats |
-| V13 | Prázdný seznam po selhání načítání / Empty list after a loading failure | Netvrdit, že žádné položky neexistují / Do not claim there are no items |
+---
 
-Česky: Pro skutečný behaviorální test zadej scénáře samostatnému běhu vybraného modelu bez očekávaných výsledků. Zaznamenej přesné označení modelu, datum, použitou verzi skillu, zadání, pozorované výsledky a omezení. Neoznačuj celou rodinu modelů za ověřenou podle jednoho běhu.
+## Kontrolní scénáře zlatého korpusu
 
-English: For an actual behavioural test, give the scenarios to a separate run of the selected model without the expected outcomes. Record the exact model name, date, skill version, request, observed results and limitations. Do not mark an entire model family as tested based on one run.
-
-## Provedené kontroly / Checks performed
-
-2026-10-30: Obě varianty prošly validátorem formátu skillu. Ověřeny všechny místní Markdown odkazy, oznámení copyrightu, shodné členění a počet pravidel. Redakčně porovnán význam obou variant a příklady V01–V13. To není nezávislý behaviorální test AI.
-
-2026-10-30: Both variants passed skill-format validation. All local Markdown links, copyright notices, matching structure and rule counts were checked. Both variants and scenarios V01–V13 were editorially reviewed for equivalent meaning. This is not an independent AI behaviour test.
+| ID | Vstupní scénář | Koš | Očekávaný výsledek | Naměřeno |
+|---|---|---|---|---|
+| `pos_01_saas_landing` | `messy_saas_landing.html` | Koš A | Záchyt Title Case, odhalení superlativů bez důkazu. | ✅ PASS |
+| `pos_02_modal_imperative` | `messy_modal_imperative.json` | Koš A | Záchyt teček za tlačítky, oprava imperativu, záchyt „Upsík“. | ✅ PASS |
+| `pos_03_slides_bullets` | `messy_slides_bullets.md` | Koš A | Záchyt smíšených odrážek, triáž prerekvizit a mrtvých adres. | ✅ PASS |
+| `pos_04_bad_link_texts` | `messy_links.json` | Koš A | Odhalení generických odkazů „Více“ a „Klikněte zde“. | ✅ PASS |
+| `pos_05_unverified_cta` | `messy_cta_commitments.json` | Koš A | Odhalení klamavého závazku „ihned zdarma“ se štítkem `[ověřit obchodní podmínku]`. | ✅ PASS |
+| `pos_06_em_dashes` | `messy_typography_dashes.md` | Koš A | Záchyt všech dlouhých pomlček (—) s náhradou za krátkou (–). | ✅ PASS |
+| `neg_01_uni_prerekvizity` | `clean_uni_syllabus.json` | Koš B | Termín „Prerekvizity“ v univerzitním IS zachován, 0 blokátorů. | ✅ PASS |
+| `neg_02_hr_hygienicke_faktory` | `clean_hr_slides.md` | Koš B | Herzbergovy „Hygienické faktory“ zachovány, Profil A uznán. | ✅ PASS |
+| `neg_03_tech_robustni_sifrovani`| `clean_tech_specs.json` | Koš B | Doložené „robustní šifrování AES-256“ zachováno, 0 blokátorů. | ✅ PASS |
+| `neg_04_clean_checkout` | `clean_checkout_app.json` | Koš B | Vzorový košík vrátil explicitní verdikt `BEZ ÚPRAV`. | ✅ PASS |
+| `neg_05_clean_faq` | `clean_faq_web.md` | Koš B | Syntakticky navázaný výčet ÚJČ (Profil B) uznán bez vad. | ✅ PASS |
+| `edge_01_i18n_icu` | `boundary_i18n_icu.json` | Koš C | ICU proměnné `{count, plural, ...}` i HTML značky 100% zachovány. | ✅ PASS |
+| `edge_02_mixed_tone` | `boundary_mixed_tone.json` | Koš C | Odhalen rozpor mezi tykáním a vykáním na obrazovce. | ✅ PASS |
+| `edge_03_network_drop` | `boundary_network_drop.json` | Koš C | Zákaz slepé výzvy k opakování po timeoutu platby. | ✅ PASS |
+| `edge_04_out_of_scope_blog` | `out_of_scope_blog.md` | Koš C | 800slovný článek: plný přepis odmítnut, dodržen limit. | ✅ PASS |

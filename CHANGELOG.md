@@ -4,6 +4,30 @@ Copyright © 2026 Luděk Sušický
 
 Versioning is per skill; the repository hosts more than one.
 
+## Release 2.0.0 (2026-11-22)
+
+- **Architektonický a lingvistický přelom na nativní češtinu (Surface-Aware Microcopy & Slide Editing):**
+  - Odpojení od univerzálního anglického klišé-jádra. Nové nativně české jádro zaměřené výhradně na App UI, konverzní web a prezentační slidy.
+  - Tvrdé vymezení záběru: odmítnutí plného přepisu dlouhé prózy, článků, LinkedIn příspěvků a smluv (ochrana proti nesprávnému použití mikrotextových pravidel).
+- **Dvoustupňový hybridní model (Linter + LLM adjudikátor):**
+  - Vytvořen bezdependenční Python 3.9+ linter `scripts/ui_lint.py` s oddělením deterministických vad (`hard_lint`) a měkkých kandidátů k sémantickému posouzení (`soft_candidate`).
+  - Zaveden princip „Zachovat jako výchozí stav“ s verdiktem `BEZ ÚPRAV`.
+- **Třístupňová terminologická triáž (`references/cs-lexicon-triage.md`):**
+  - Doménově vázané termíny (*prerekvizity* na VŠ zachovány, v SaaS nahrazeny), posunuté kalky (*hygienický standard* v medicíně zachován, na webu *samozřejmý základ*), neusazené kalky (*mrtvé adresy* -> *nefunkční odkazy / chyba 404*).
+  - Absolutní lingvistická pojistka: přísný zákaz tvorby neologismů a pseudoodborných složenin.
+- **Interpunkční profily výčtů podle ÚJČ AV ČR a ČSN 01 6910 (`references/cs-typography-lists.md`):**
+  - Profily A (heslovitý v UI bez teček), B (syntakticky navázaný s dvojtečkou a čárkami/středníky), C (větný) a D (normalizace smíšených výčtů).
+  - Typografická pravidla: zákaz teček za tlačítky a nadpisy, zákaz anglického Title Case v češtině, náhrada em-dash (—) za krátkou pomlčku (–) s mezerami.
+- **Pravidla českého UX psaní (`references/surface-app.md`, `references/surface-web.md`, `references/surface-slides.md`):**
+  - Tlačítka v dokonavém infinitivu, tooltipech v činném rodě, pokrytí 6 stavů rozhraní, jednotnost tykání/vykání, UX Commitment Guard pro CTA závazky.
+- **Čtyřvrstvý evaluační rámec a benchmark (`evals/`):**
+  - 24 trigger testů v `evals/trigger_evals.json` (100% přesnost aktivace).
+  - 15 zlatých behaviorálních scénářů v `evals/evals.json` a testovací korpus v `evals/corpus/`.
+  - Naměřené výsledky: 100 % záchyt vad (Koš A), 0,0 % planých nálezů na čistém textu (Koš B FPR), 100 % ochrana i18n ICU syntaxe (Koš C).
+  - 19 deterministických jednotkových testů v `tests/test_ui_lint.py`.
+- **Multi-agentní kompatibilita (AAIF):**
+  - Řídicí manifest v `.agents/skills/ui-cliche/SKILL.md` (<250 řádků), podpora pro OpenAI Codex, Gemini CLI, Cursor, VS Code, symlink pro Claude Code a `prompts/chat-compact.md` pro webové chaty.
+
 ## Release 1.2.0 (2026-11-14)
 
 - Add skills.sh ecosystem support: installation guides via Skills CLI, catalog badges and discovery sections.

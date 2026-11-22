@@ -1,0 +1,1 @@
+.agents/skills/ui-cliche/SKILL.md

@@ -1,0 +1,178 @@
+{
+  "timestamp": "2026-11-22T15:17:25Z",
+  "version": "2.0.0",
+  "scenarios_evaluated": 15,
+  "metrics": {
+    "basket_a_recall": "100.0%",
+    "basket_b_false_positive_rate": "0.0%",
+    "basket_c_i18n_preservation": "100.0%",
+    "linter_avg_latency_ms": 40.73
+  },
+  "basket_stats": {
+    "basket_a_positive_cliche_and_flaws": {
+      "total": 6,
+      "detected": 6
+    },
+    "basket_b_true_negative_do_not_touch": {
+      "total": 5,
+      "false_positives": 0,
+      "clean_pass": 5
+    },
+    "basket_c_boundary_and_i18n": {
+      "total": 4,
+      "preserved": 4
+    }
+  },
+  "detailed_results": [
+    {
+      "eval_id": "pos_01_saas_landing",
+      "bucket": "basket_a_positive_cliche_and_flaws",
+      "surface": "web",
+      "exit_code": 1,
+      "hard_count": 2,
+      "soft_count": 3,
+      "duration_ms": 57.23,
+      "status": "PASS"
+    },
+    {
+      "eval_id": "pos_02_modal_imperative",
+      "bucket": "basket_a_positive_cliche_and_flaws",
+      "surface": "app",
+      "exit_code": 1,
+      "hard_count": 2,
+      "soft_count": 1,
+      "duration_ms": 40.41,
+      "status": "PASS"
+    },
+    {
+      "eval_id": "pos_03_slides_bullets",
+      "bucket": "basket_a_positive_cliche_and_flaws",
+      "surface": "slides",
+      "exit_code": 1,
+      "hard_count": 1,
+      "soft_count": 2,
+      "duration_ms": 39.74,
+      "status": "PASS"
+    },
+    {
+      "eval_id": "pos_04_bad_link_texts",
+      "bucket": "basket_a_positive_cliche_and_flaws",
+      "surface": "app",
+      "exit_code": 2,
+      "hard_count": 0,
+      "soft_count": 1,
+      "duration_ms": 40.54,
+      "status": "PASS"
+    },
+    {
+      "eval_id": "pos_05_unverified_cta",
+      "bucket": "basket_a_positive_cliche_and_flaws",
+      "surface": "web",
+      "exit_code": 2,
+      "hard_count": 0,
+      "soft_count": 2,
+      "duration_ms": 37.7,
+      "status": "PASS"
+    },
+    {
+      "eval_id": "pos_06_em_dashes",
+      "bucket": "basket_a_positive_cliche_and_flaws",
+      "surface": "app",
+      "exit_code": 1,
+      "hard_count": 3,
+      "soft_count": 0,
+      "duration_ms": 37.55,
+      "status": "PASS"
+    },
+    {
+      "eval_id": "neg_01_uni_prerekvizity",
+      "bucket": "basket_b_true_negative_do_not_touch",
+      "surface": "app",
+      "exit_code": 0,
+      "hard_count": 0,
+      "soft_count": 0,
+      "duration_ms": 40.29,
+      "status": "PASS"
+    },
+    {
+      "eval_id": "neg_02_hr_hygienicke_faktory",
+      "bucket": "basket_b_true_negative_do_not_touch",
+      "surface": "slides",
+      "exit_code": 0,
+      "hard_count": 0,
+      "soft_count": 0,
+      "duration_ms": 39.87,
+      "status": "PASS"
+    },
+    {
+      "eval_id": "neg_03_tech_robustni_sifrovani",
+      "bucket": "basket_b_true_negative_do_not_touch",
+      "surface": "app",
+      "exit_code": 2,
+      "hard_count": 0,
+      "soft_count": 1,
+      "duration_ms": 37.83,
+      "status": "PASS"
+    },
+    {
+      "eval_id": "neg_04_clean_checkout",
+      "bucket": "basket_b_true_negative_do_not_touch",
+      "surface": "app",
+      "exit_code": 0,
+      "hard_count": 0,
+      "soft_count": 0,
+      "duration_ms": 38.62,
+      "status": "PASS"
+    },
+    {
+      "eval_id": "neg_05_clean_faq",
+      "bucket": "basket_b_true_negative_do_not_touch",
+      "surface": "web",
+      "exit_code": 0,
+      "hard_count": 0,
+      "soft_count": 0,
+      "duration_ms": 40.66,
+      "status": "PASS"
+    },
+    {
+      "eval_id": "edge_01_i18n_icu",
+      "bucket": "basket_c_boundary_and_i18n",
+      "surface": "app",
+      "exit_code": 1,
+      "hard_count": 1,
+      "soft_count": 0,
+      "duration_ms": 39.33,
+      "status": "PASS"
+    },
+    {
+      "eval_id": "edge_02_mixed_tone",
+      "bucket": "basket_c_boundary_and_i18n",
+      "surface": "app",
+      "exit_code": 0,
+      "hard_count": 0,
+      "soft_count": 0,
+      "duration_ms": 41.77,
+      "status": "PASS"
+    },
+    {
+      "eval_id": "edge_03_network_drop",
+      "bucket": "basket_c_boundary_and_i18n",
+      "surface": "app",
+      "exit_code": 2,
+      "hard_count": 0,
+      "soft_count": 1,
+      "duration_ms": 39.16,
+      "status": "PASS"
+    },
+    {
+      "eval_id": "edge_04_out_of_scope_blog",
+      "bucket": "basket_c_boundary_and_i18n",
+      "surface": "none",
+      "exit_code": 2,
+      "hard_count": 0,
+      "soft_count": 2,
+      "duration_ms": 40.24,
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+# keep-terms.yaml: Projektový whitelist chráněné terminologie a nastavení stylu
+# Zkopírujte tento soubor do kořene vašeho projektu jako keep-terms.yaml
+
+# 1. Zvolený styl oslovení v aplikaci (vykani / tykani)
+tone_of_voice:
+  addressing: "vykani" # Možnosti: "vykani" | "tykani"
+
+# 2. Chráněné oborové a produktové termíny
+# Tyto termíny linter ani LLM nesmí označovat jako chybu a nesmí je přepisovat.
+protected_terms:
+  - "prerekvizity"               # Pro univerzitní a vzdělávací systémy
+  - "hygienické faktory"         # Pro HR teorii a motivační modely
+  - "robustní šifrování"         # Pro bezpečnostní a kryptografické nástroje
+  - "klíčová metrika"            # Pro analytické nástroje
+  - "single sign-on"
+  - "dvoufázové ověření"
+  - "webhook"
+
+# 3. Chráněné obchodní značky a vlastní názvy (výjimky z Title Case)
+protected_brands:
+  - "Google Cloud"
+  - "Apple Pay"
+  - "Česká spořitelna"
+  - "Shoptet"
+  - "Karlova univerzita"

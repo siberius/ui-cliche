@@ -1,73 +1,80 @@
-# Použití a údržba / Usage and maintenance
+# Použití a údržba: ui-cliche v2.0 / Usage and maintenance
 
 Copyright © 2026 Luděk Sušický
 
 ## Česky
 
-### Výběr varianty
+### Architektura a volba povrchu (Surface Router)
 
-Použij `cliche` pro obecné texty pro lidi (články, dokumentaci, e-maily, marketing, webové texty) v angličtině i češtině; české vrstvy si skill dotahuje z `cliche/references/` sám podle jazyka a úkolu. Pro řetězce rozhraní přímo v kódu při programování použij `ui-copy-cs` pro české UI a `ui-copy-en` pro anglické UI. Jazyk pokynů i příkladů odpovídá cílovému UI. U dvojjazyčné aplikace aplikuj varianty na příslušné řetězce; nenech jednu variantu přepsat druhý jazyk. Nenačítej víc skillů k jednomu úkolu, než úkol potřebuje.
+Skill `ui-cliche v2.0` je specializován na krátké funkční texty. Podle typu zpracovávaného obsahu volí jeden ze tří profilů:
+1. **`app` (Aplikace a produkty):** Tlačítka, dialogy, chybové hlášky, formuláře, tooltipy a lokalizační soubory (`.json`, `.po`, `.tsx`). Kontroluje dokonavý infinitiv na tlačítkách, činný rod v tooltipech, konzistenci tykání/vykání a pokrytí 6 stavů rozhraní.
+2. **`web` (Web a konverzní plochy):** Hero nadpisy, karty vlastností, ceníky, CTA prvky a trust bary. Odstraňuje nepodložené AI superlativy, zákaz anglického Title Case v českých nadpisech a prověřuje pravdivost slibů (*„ihned zdarma“*).
+3. **`slides` (Prezentace a decky):** Titulky slidů, odrážkové výčty, callouty a KPI popisky. Vynucuje titulky nesoucí konkrétní zjištění, syntaktickou paralelnost odrážek a jednotnou interpunkci výčtů podle ÚJČ.
 
-### Připojení k práci
+> [!WARNING]
+> **Omezení záběru (Out-of-Scope):**  
+> Dlouhé blogové články, LinkedIn příspěvky, eseje a smlouvy skill **tvrdě odmítá kompletně přepisovat**. V takovém případě nabídne pouze selektivní kontrolu nadpisů a CTA tlačítek.
 
-Pro instalaci do moderních AI agentů (Codex, Claude Code, Cursor, Antigravity atd.) použij oficiální CLI z ekosystému [skills.sh](https://skills.sh):
+---
 
+### Spuštění a integrace v agentních nástrojích
+
+#### 1. Instalace přes Skills CLI (skills.sh)
 ```bash
-# Všechny skilly v repozitáři
+# Instalace do vybraného agenta (Codex, Claude Code, Cursor atd.)
 npx skills add siberius/ui-cliche --full-depth -g -a codex
-
-# Konkrétní vybraný skill
-npx skills add siberius/ui-cliche --skill cliche --full-depth -g -a codex
 ```
 
-V chatu přilož `SKILL.md` nebo vlož celý jeho obsah. Agentovi s přístupem k souborům zadej skutečnou cestu a požádej ho o načtení. V prostředí s podporou skillů použij kompletní složku podle pravidel daného prostředí. Tento repozitář nemění konfiguraci žádného asistenta automaticky bez vašeho pokynu.
+#### 2. Použití v agentních IDE (Codex, Gemini CLI, Cursor, VS Code)
+Skill je standardně umístěn v `.agents/skills/ui-cliche/SKILL.md`. Agent načítá manifest automaticky.
 
-Samotný `SKILL.md` obsahuje všechna závazná pravidla. `references/examples.md` je doplňkový materiál pro nejasné případy, dostupný vedle skillu nebo jako další příloha. README a tato dokumentace nejsou nutnou součástí kontextu při každém použití.
+#### 3. Použití v Claude Code
+Pro Claude Code je připraven nativní symlink `.claude/skills/ui-cliche/SKILL.md`.
 
-### Kontrola a úprava
+#### 4. Webové chaty (Claude Projects, ChatGPT Custom GPT, Gemini Gems)
+Pro prostředí bez lokálního souborového systému je připraven optimalizovaný jedno-souborový prompt v [prompts/chat-compact.md](../prompts/chat-compact.md).
 
-Rozlišuj požadavek na revizi od požadavku na změnu. Revize vypisuje problémy bez změny souborů; úprava mění pouze dotčené texty. Skill sám nepovoluje publikaci, deployment ani změnu licencí. Nevyžaduje síťové připojení.
+---
 
-Při úpravě zachovej funkční význam, technické tokeny, přístupnost a rozsah práce. Výrazy s tečkami či spojovníky nejsou automaticky chyby. Automatický linter může označit kandidáty, ale rozhodnutí potřebuje kontext prvku. Nepoužívej globální nahrazování v celém zdrojovém kódu.
+### Lokální spuštění bezdependenčního linteru
 
-### Aktualizace obou jazyků
+Linter `scripts/ui_lint.py` nevyžaduje žádné balíčky z PyPI (čistý Python 3.9+).
 
-Změnu společného pravidla proveď v obou `SKILL.md` a v odpovídajících příkladech. Jazykové rozdíly udržuj záměrně: české vykání a infinitiv, anglický přímý slovesný tvar a místní pravopis. Aktualizuj verzi, historii a ověř stejné hraniční případy v obou variantách. Zaznamenej konkrétní testovaný model jen při skutečném testování.
+```bash
+# Základní spuštění pro aplikaci
+python3 scripts/ui_lint.py --surface app src/locales/cs.json
+
+# Spuštění pro webovou stránku s výstupem do formátu JSON
+python3 scripts/ui_lint.py --surface web index.html --json
+
+# Spuštění s projektovým slovníkem chráněných termínů
+python3 scripts/ui_lint.py --surface app strings.json --keep-terms assets/keep-terms.example.yaml
+```
+
+Návratové kódy:
+- `0`: Text je čistý (`BEZ ÚPRAV`).
+- `1`: Nalezeny tvrdé deterministické blokátory (`hard_lint`).
+- `2`: Nalezeni pouze kandidáti k terminologickému posouzení (`soft_candidates`).
+- `3`: Chyba vstupu nebo parametrů.
+
+---
+
+### Nastavení chráněných termínů (`keep-terms.yaml`)
+
+Zkopírujte [assets/keep-terms.example.yaml](../assets/keep-terms.example.yaml) do kořene vašeho projektu jako `keep-terms.yaml`. Do souboru můžete přidat:
+- **`tone_of_voice.addressing`:** Zvolený tón oslovení (`vykani` nebo `tykani`).
+- **`protected_terms`:** Seznam odborných a interních pojmů, na které linter ani model nesmí sahat (např. *prerekvizity*, *robustní šifrování*).
+- **`protected_brands`:** Názvy značek a produktů (výjimky z Title Case).
+
+---
 
 ## English
 
-### Choose a variant
+### Architecture and Surface Routing
 
-Use `cliche` for general human-facing text (articles, documentation, e-mail, marketing, web copy) in English or Czech; the skill pulls its Czech layers from `cliche/references/` on demand according to language and task. For interface strings inside code while programming, use `ui-copy-cs` for Czech UI and `ui-copy-en` for English UI. Instructions and examples match the target language. In a bilingual application, apply each variant to its corresponding strings; do not let one overwrite the other language. Do not load more skills for one task than the task needs.
+`ui-cliche v2.0` is engineered specifically for functional microcopy:
+- **`app`:** UI buttons (perfective infinitives), tooltips (active voice), 6 interface states, addressing consistency (tykání/vykání), and i18n placeholders.
+- **`web`:** Hero headlines (no Title Case in Czech), feature cards, proof-backed value propositions, CTA commitment verification.
+- **`slides`:** Finding-driven slide titles, syntactically parallel bullet points, ÚJČ AV ČR / ČSN 01 6910 bullet punctuation profiles.
 
-### Supply the skill
-
-For installation into coding agents (Codex, Claude Code, Cursor, Antigravity, etc.), use the official CLI from the [skills.sh](https://skills.sh) registry:
-
-```bash
-# All skills in repository
-npx skills add siberius/ui-cliche --full-depth -g -a codex
-
-# Selected skill
-npx skills add siberius/ui-cliche --skill cliche --full-depth -g -a codex
-```
-
-In chat, attach `SKILL.md` or paste its complete contents. Give a file-capable agent the actual path and ask it to read the file. In an environment with skill support, use the complete folder according to that environment's rules. This repository changes no assistant configuration without your explicit command.
-
-`SKILL.md` contains every binding rule. `references/examples.md` supplies optional context for ambiguous cases, alongside the skill or as another attachment. The README and this documentation need not be loaded for every task.
-
-### Review and editing
-
-Distinguish review requests from editing requests. A review reports problems without changing files; editing changes only the affected copy. The skill itself authorizes no publication, deployment or licensing changes. It requires no network connection.
-
-Preserve functional meaning, technical tokens, accessibility and task scope. Periods and hyphens are not automatically mistakes. A linter can identify candidates, but deciding requires element context. Do not perform global replacements throughout source code.
-
-### Maintain both languages
-
-Change shared rules in both `SKILL.md` files and corresponding examples. Preserve intentional language differences: Czech polite address and infinitives, English direct action verbs and local spelling. Update the version and changelog, and review equivalent edge cases in both variants. Record a model as tested only after an actual test.
-
-## Napojení na web / Website integration
-
-Česky: Kanonický zdroj českého skillu je `ui-copy-cs/SKILL.md`. Ve webovém projektu vytvoří `testing/sync_ui_copy_skill.py` obě dosavadní stažitelné kopie pod názvem `psani-bez-ai-otisku.md`; připojí příklady do jednoho souboru a připojí licenci MIT. Poté se spouští `testing/build_articles.py` a `testing/build_seo.py`. Deployment je samostatný krok. Kompatibilní soubor ve vlastní bance md-skills se při změně zdroje obnovuje také; starý obsah se nevrací.
-
-English: The canonical Czech source is `ui-copy-cs/SKILL.md`. In the website project, `testing/sync_ui_copy_skill.py` generates the two existing downloads named `psani-bez-ai-otisku.md`, embeds the examples in the same file and includes the MIT license. Next run `testing/build_articles.py` and `testing/build_seo.py`. Deployment is separate. Refresh the compatibility file in the local skill bank when changing the source too; do not restore the old content.
+Long prose, blog posts, essays, and legal documents are **strictly rejected from full rewrites**.

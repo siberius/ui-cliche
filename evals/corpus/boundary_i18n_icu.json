@@ -1,0 +1,5 @@
+{
+  "remainingDays": "Zbývá vám <strong>{count, plural, one{# den} few{# dny} other{# dní}}</strong> do vypršení licence.",
+  "userGreeting": "Vítejte zpět, <span>{{name}}</span>!",
+  "badButton": "Ulož nastavení."
+}

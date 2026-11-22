@@ -1,0 +1,6 @@
+{
+  "section": "Zabezpečení a šifrování",
+  "description": "Všechna zákaznická data jsou chráněna pomocí robustního šifrování AES-256 v klidovém stavu i při přenosu přes protokol TLS 1.3.",
+  "audit": "Bezpečnostní architektura byla ověřena nezávislým penetračním testem v říjnu 2026.",
+  "button": "Stáhnout certifikát shody"
+}

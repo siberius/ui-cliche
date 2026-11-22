@@ -1,0 +1,5 @@
+{
+  "dialogTitle": "Chyba při zpracování požadavku",
+  "badErrorMsg": "Upsík! Spojení se serverem vypršelo. Zkuste kliknout na odeslat znovu.",
+  "action": "Zkusit znovu"
+}
